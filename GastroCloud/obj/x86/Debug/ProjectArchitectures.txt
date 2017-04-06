@@ -1,1 +1,0 @@
-C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\GastroCloud.csproj;x86

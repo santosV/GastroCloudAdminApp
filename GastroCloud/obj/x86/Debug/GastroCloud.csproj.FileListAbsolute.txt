@@ -427,3 +427,11 @@ C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\De
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\MainLayout.g.cs
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\MainLayout.xaml
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\MainLayout.xbf
+C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\MainLayout.g.i.cs
+C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\MainLayout.g.cs
+C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\OptionsLayout.g.i.cs
+C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\OptionsLayout.g.cs
+C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\MainLayout.xaml
+C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\OptionsLayout.xaml
+C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\MainLayout.xbf
+C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\OptionsLayout.xbf

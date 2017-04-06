@@ -98,6 +98,9 @@
     <Compile Include="Layout\MainLayout.xaml.cs">
       <DependentUpon>MainLayout.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Layout\OptionsLayout.xaml.cs">
+      <DependentUpon>OptionsLayout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Layout\MainLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layout\OptionsLayout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
