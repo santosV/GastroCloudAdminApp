@@ -5,9 +5,162 @@
     xmlns:local="using:GastroCloud"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"  
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"  
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+   
+    <Grid>
+        <!--backgroud image-->
+
+        <Image Stretch="UniformToFill" x:Name="imgLogin" Height="auto"
+               Width="auto" Source="Assets/tellers_restaurant_and_bar__lawrence_kansas-wallpaper-2880x1800.jpg">
+            <interactivity:Interaction.Behaviors>
+                <behaviors:Blur x:Name="blur" Value="3" />
+            </interactivity:Interaction.Behaviors>
+        </Image>
+
+        <!--ShadowOverlay Effect-->
+        <StackPanel>
+            <StackPanel.Background>
+                <SolidColorBrush Color="Black" Opacity="0.4"/>
+            </StackPanel.Background>
+        </StackPanel>
+
+        <Grid x:Name="GridForm">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="FirstColumn" Width="0.2*"/>
+                <ColumnDefinition x:Name="SecondColumn" Width="*"/>
+                <ColumnDefinition x:Name="ThirdColumn" Width="0.2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="LogoName" Height="2*"/>
+                <RowDefinition x:Name="SpaceOne" Height="50"/>
+                <RowDefinition x:Name="Address" Height="0.5*"/>
+                <RowDefinition x:Name="SpaceTwo" Height="5"/>
+                <RowDefinition x:Name="CompanyName" Height="0.5*"/>
+                <RowDefinition x:Name="SpaceThree" Height="5"/>
+                <RowDefinition x:Name="EmailContra" Height="1.1*"/>
+                <RowDefinition x:Name="SpaceFour" Height="5"/>
+                <RowDefinition x:Name="User" Height="0.5*"/>
+                <RowDefinition x:Name="SpaceFive" Height="5"/>
+                <RowDefinition x:Name="Password" Height="0.5*"/>
+                <RowDefinition x:Name="SpaceSix" Height="5"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+
+
+
+            <!--Logo and Name-->
+            <Image Grid.Column="1" Grid.Row="0" Height="170" x:Name="Logo"  VerticalAlignment="Top" HorizontalAlignment="Center" Source="Assets/LogoLetter.png"/>
+           
+
+            <!--Direccion servidor-->
+            <TextBox x:Name="txtAddress" Grid.Column="1" Width="200" Grid.Row="2" BorderBrush="#FF0078D7" BorderThickness="3,0,0,0" Text="Direccion Servidor" Foreground="#FFE0D9D9">
+                <TextBox.Background>
+                    <SolidColorBrush Color="#66FFFFFF" Opacity="0.35"/>
+                </TextBox.Background>
+
+            </TextBox>
+
+            <!--nombre empresa-->
+            <TextBox x:Name="txtCompanyName" Grid.Column="1" Grid.Row="4" Width="200" BorderBrush="#FF0078D7" BorderThickness="3,0,0,0" Text="Nombre de Empresa" Foreground="#FFE0D9D9">
+                <TextBox.Background>
+                    <SolidColorBrush Color="#66FFFFFF" Opacity="0.35"/>
+                </TextBox.Background>
+
+            </TextBox>
+
+            <!--stackpanel Logo company email and password-->
+            
+            <StackPanel x:Name="StackContainer" Height="auto" Width="200" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Orientation="Horizontal">
+
+                <!--company logo-->
+                <Image Stretch="Fill" Height="45" Width="45" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/add picture.png"/>
+
+                <!--containner email and password-->
+                <StackPanel x:Name="Stacktxt" Orientation="Vertical" HorizontalAlignment="Right">
+
+                    <!--Email-->
+                    <TextBox x:Name="txtEmail"  Width="160" BorderBrush="#FF0078D7" BorderThickness="3,0,0,0" Text="Correo Electronico" Foreground="#FFE0D9D9">
+                        <TextBox.Background>
+                            <SolidColorBrush Color="#66FFFFFF" Opacity="0.35"/>
+                        </TextBox.Background>
+
+                    </TextBox>
+
+                    <!--password-->
+                    <TextBox x:Name="txtEmailPassword" Margin="0,5,0,0" Width="160" BorderBrush="#FF0078D7" BorderThickness="3,0,0,0" Text="Contraseña" Foreground="#FFE0D9D9">
+                        <TextBox.Background>
+                            <SolidColorBrush Color="#66FFFFFF" Opacity="0.35"/>
+                        </TextBox.Background>
+
+                    </TextBox>
+                </StackPanel>
+            </StackPanel>
+
+            <TextBox x:Name="txtUserServer" Grid.Column="1" Grid.Row="8" Width="200" BorderBrush="#FF0078D7" BorderThickness="3,0,0,0" Text="Usuario Servidor" Foreground="#FFE0D9D9">
+                <TextBox.Background>
+                    <SolidColorBrush Color="#66FFFFFF" Opacity="0.35"/>
+                </TextBox.Background>
+
+            </TextBox>
+
+            <TextBox x:Name="txtServerPassword" Grid.Column="1" Grid.Row="10" Width="200" BorderBrush="#FF0078D7" BorderThickness="3,0,0,0" Text="Contraseña Servidor" Foreground="#FFE0D9D9">
+                <TextBox.Background>
+                    <SolidColorBrush Color="#66FFFFFF" Opacity="0.35"/>
+                </TextBox.Background>
+
+            </TextBox>
+
+            <Button Grid.Row="12" Grid.Column="1" x:Name="BtnIngresar" Width="140" HorizontalAlignment="Center" Content="Ingresar" Foreground="White" Style="{StaticResource ButtonStyle1}" >
+                <Button.Background>
+                    <SolidColorBrush Color="#FF0078D7" Opacity="0.60000002384185791"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="TabletDesktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="641" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="txtAddress.Width" Value="300"/>
+                        <Setter Target="txtCompanyName.Width" Value="300"/>
+                        <Setter Target="txtEmail.Width" Value="260"/>
+                        <Setter Target="txtEmailPassword.Width" Value="260"/>
+                        <Setter Target="StackContainer.Width" Value="300"/>
+                        <Setter Target="txtUserServer.Width" Value="300"/>
+                        <Setter Target="txtServerPassword.Width" Value="300"/>
+                        <Setter Target="Logo.Height" Value="195"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+            
+            
+
+        </VisualStateManager.VisualStateGroups>
+
 
     </Grid>
+    
+    
 </Page>
