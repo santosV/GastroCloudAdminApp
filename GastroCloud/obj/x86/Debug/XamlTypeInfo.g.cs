@@ -132,7 +132,7 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[16];
+            _typeNameTable = new string[17];
             _typeNameTable[0] = "Microsoft.Xaml.Interactivity.Interaction";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
@@ -149,8 +149,9 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
             _typeNameTable[13] = "GastroCloud.MainPage";
             _typeNameTable[14] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[15] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[16] = "GastroCloud.Views.MainLayout";
 
-            _typeTable = new global::System.Type[16];
+            _typeTable = new global::System.Type[17];
             _typeTable[0] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
@@ -167,6 +168,7 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
             _typeTable[13] = typeof(global::GastroCloud.MainPage);
             _typeTable[14] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[15] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[16] = typeof(global::GastroCloud.Views.MainLayout);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -204,6 +206,7 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
         private object Activate_2_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
         private object Activate_5_Blur() { return new global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur(); }
         private object Activate_13_MainPage() { return new global::GastroCloud.MainPage(); }
+        private object Activate_16_MainLayout() { return new global::GastroCloud.Views.MainLayout(); }
         private void VectorAdd_2_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
@@ -302,6 +305,13 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
 
             case 15:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 16:   //  GastroCloud.Views.MainLayout
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_16_MainLayout;
+                userType.SetIsLocalType();
+                xamlType = userType;
                 break;
             }
             return xamlType;
