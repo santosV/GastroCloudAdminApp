@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="GastroCloud.Views.MainLayout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GastroCloud.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--Recursos-->
+    <Page.Resources>
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <!--Terminan Recursos-->
+
+
+    <SplitView x:ConnectionId='1' x:Name="HeaderNav" CompactPaneLength="50" OpenPaneLength="300" IsPaneOpen="False"  DisplayMode="CompactInline">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='2' x:Name="VisualStateGroup"/>
+        </VisualStateManager.VisualStateGroups>
+        <!--Header nav-->
+
+        <SplitView.Pane >
+
+            <ScrollViewer>
+                <StackPanel Background="{ThemeResource SystemControlBackgroundAccentBrush}">
+                    <RadioButton x:ConnectionId='3'                            Content="" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                    <StackPanel Background="{ThemeResource SystemControlBackgroundAltMediumLowBrush}" Margin="0,0,0,20" Padding="0,20">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="" FontSize="72"  Foreground="White" TextAlignment="Center"></TextBlock>
+                        <TextBlock Text="NOMBRE EMPRESA" TextAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" Foreground="White"></TextBlock>
+                    </StackPanel>
+
+                    <RadioButton x:ConnectionId='4' x:Name="btnHome"                       Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                    <RadioButton x:ConnectionId='5' x:Name="btnGrupos"                          Content="Grupos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                    <RadioButton x:ConnectionId='6' x:Name="btnAlmacenes"                             Content="Almacenes" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                    <RadioButton x:ConnectionId='7' x:Name="btnInsumos"                           Content="Insumos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                    <RadioButton x:ConnectionId='8' x:Name="btnProveedores"                               Content="Proveedores " Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                    <RadioButton x:ConnectionId='9' x:Name="btnPresentaciones"                                  Content="Presentaciones" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                    <RadioButton x:ConnectionId='10' x:Name="btnProductos"                             Content="Productos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                    <RadioButton x:ConnectionId='11' x:Name="btnCompras"                           Content="Compras" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                    <RadioButton x:ConnectionId='12' x:Name="btnReportes"                            Content="Reportes" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                </StackPanel>
+            </ScrollViewer>
+        </SplitView.Pane>
+        <!--Termina Header nav-->
+
+
+        <!--Contenido-->
+        <SplitView.Content>
+            <Grid Padding="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <StackPanel  Grid.Row="0" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:ConnectionId='14' x:Name="headerIcon" FontFamily="Segoe MDL2 Assets" Text="" FontSize="36"    TextAlignment="Center" Margin="0,13,5,0" Foreground="#333"></TextBlock>
+                        <TextBlock x:ConnectionId='15' x:Name="headerTitle"  Text="Grupos" Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap"  Foreground="#333" Margin="0"/>
+                    </StackPanel>
+                    <StackPanel Height="10" Background="{StaticResource InkToolbarAccentColorThemeBrush}">
+                    </StackPanel>
+                </StackPanel>
+                <Frame x:ConnectionId='13' x:Name="MainFrame" Grid.Row="1" >
+
+                </Frame>
+            </Grid>
+
+
+        </SplitView.Content>
+        <!--Termina Contenido-->
+    </SplitView>
+
+
+
+</Page>
+

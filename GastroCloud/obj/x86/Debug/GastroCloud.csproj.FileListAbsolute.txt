@@ -210,7 +210,6 @@ C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\De
 C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
 C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\GastroCloud.csprojResolveAssemblyReference.cache
-C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\GastroCloud.csprojResolveAssemblyReference.cache
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\App.g.i.cs
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\App.g.cs
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\MainPage.g.i.cs
@@ -218,16 +217,13 @@ C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\De
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\XamlTypeInfo.g.cs
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\App.xaml
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\MainPage.xaml
-C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Styles.xaml
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\App.xbf
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\MainPage.xbf
-C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Styles.xbf
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\GastroCloud.exe
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\GastroCloud.pdb
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\App.xbf
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\MainPage.xbf
-C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Styles.xbf
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\GastroCloud.xr.xml
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\GastroCloud.exe
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\GastroCloud.pdb
@@ -435,3 +431,27 @@ C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\De
 C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\OptionsLayout.xaml
 C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\MainLayout.xbf
 C:\Users\ReseivorDog\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\OptionsLayout.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\OptionsLayout.g.i.cs
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\OptionsLayout.g.cs
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\OptionsLayout.xaml
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Layout\OptionsLayout.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Layout\OptionsLayout.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Views\Home\Home.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Home\Home.g.i.cs
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Home\Home.g.cs
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Home\Home.xaml
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Home\Home.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Styles\Styles.xaml
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Styles\Styles.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Styles\Styles.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\GastroCloud.csprojResolveAssemblyReference.cache
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Views\Index.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Index.g.i.cs
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Index.g.cs
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Index.xaml
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Index.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Views\Forms.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Forms.g.i.cs
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Forms.g.cs
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Forms.xaml
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Forms.xbf

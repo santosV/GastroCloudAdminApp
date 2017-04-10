@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-06T20:12:02.189</Modified>
+      <Modified>2017-04-10T16:49:48.283</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\GastroCloud.exe">
       <PackagePath>entrypoint\GastroCloud.exe</PackagePath>
-      <Modified>2017-04-06T20:11:59.399</Modified>
+      <Modified>2017-04-10T16:46:55.304</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -526,9 +526,17 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-21T00:30:08.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\images.jpg">
+      <PackagePath>Assets\images.jpg</PackagePath>
+      <Modified>2017-04-07T21:09:36.107</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\tellers_restaurant_and_bar__lawrence_kansas-wallpaper-2880x1800.jpg">
       <PackagePath>Assets\tellers_restaurant_and_bar__lawrence_kansas-wallpaper-2880x1800.jpg</PackagePath>
       <Modified>2017-04-06T19:59:47.787</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\intro.mp4">
+      <PackagePath>Assets\intro.mp4</PackagePath>
+      <Modified>2017-04-06T23:37:42.984</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -536,7 +544,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\GastroCloud.xr.xml">
       <PackagePath>GastroCloud.xr.xml</PackagePath>
-      <Modified>2017-04-06T20:08:57.404</Modified>
+      <Modified>2017-04-10T16:46:54.368</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -545,11 +553,11 @@
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-06T20:12:01.069</Modified>
+      <Modified>2017-04-10T16:49:47.428</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Core\GastroCloud.exe">
       <PackagePath>GastroCloud.exe</PackagePath>
-      <Modified>2017-04-06T20:12:02.156</Modified>
+      <Modified>2017-04-10T16:49:48.258</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

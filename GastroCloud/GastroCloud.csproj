@@ -95,6 +95,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GridResizable\BindableBase.cs" />
+    <Compile Include="GridResizable\IResizable.cs" />
+    <Compile Include="GridResizable\OpitionsViewModel.cs" />
+    <Compile Include="GridResizable\Options.cs" />
+    <Compile Include="GridResizable\VariableGridView.cs" />
     <Compile Include="Layout\MainLayout.xaml.cs">
       <DependentUpon>MainLayout.xaml</DependentUpon>
     </Compile>
@@ -105,6 +110,16 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UniversalPanel.cs" />
+    <Compile Include="Views\Forms.xaml.cs">
+      <DependentUpon>Forms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -114,9 +129,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\add picture.png" />
+    <Content Include="Assets\images.jpg" />
     <Content Include="Assets\LOGO.png" />
     <Content Include="Assets\LogoLetter.png" />
     <Content Include="Assets\tellers_restaurant_and_bar__lawrence_kansas-wallpaper-2880x1800.jpg" />
+    <Content Include="Assets\intro.mp4" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -143,15 +160,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles.xaml">
+    <Page Include="Styles\Styles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Views\Forms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Home\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Grupos\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

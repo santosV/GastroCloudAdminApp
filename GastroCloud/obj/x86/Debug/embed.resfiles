@@ -1,4 +1,8 @@
 App.xbf
 Layout\MainLayout.xbf
+Layout\OptionsLayout.xbf
 MainPage.xbf
-Styles.xbf
+Styles\Styles.xbf
+Views\Forms.xbf
+Views\Home\Home.xbf
+Views\Index.xbf

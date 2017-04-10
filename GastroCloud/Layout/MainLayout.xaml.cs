@@ -25,7 +25,12 @@ namespace GastroCloud.Views
         public MainLayout()
         {
             this.InitializeComponent();
+
+            btnHome_Click(null,null);
+            
         }
+
+      
 
         private void btnHeaderNav_Click(object sender, RoutedEventArgs e)
         {
@@ -34,11 +39,66 @@ namespace GastroCloud.Views
 
         private void View_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
         {
-            if (contentFrame.CanGoBack)
-            {
-                e.Handled = true;
-                contentFrame.GoBack();
-            }
+            //if (contentFrame.CanGoBack)
+            //{
+            //    e.Handled = true;
+            //    contentFrame.GoBack();
+            //}
+        }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            headerTitle.Text = btnHome.Content.ToString();
+            headerIcon.Text = btnHome.Tag.ToString();
+            MainFrame.Navigate(typeof(Views.Forms));
+        }
+
+        private void btnGrupos_Click(object sender, RoutedEventArgs e)
+        {
+            headerTitle.Text = btnGrupos.Content.ToString();
+            headerIcon.Text = btnGrupos.Tag.ToString();
+        }
+
+        private void btnAlmacenes_Click(object sender, RoutedEventArgs e)
+        {
+            headerTitle.Text = btnAlmacenes.Content.ToString();
+            headerIcon.Text = btnAlmacenes.Tag.ToString();
+        }
+
+        private void btnInsumos_Click(object sender, RoutedEventArgs e)
+        {
+            headerTitle.Text = btnInsumos.Content.ToString();
+            headerIcon.Text = btnInsumos.Tag.ToString();
+        }
+
+        private void btnProveedores_Click(object sender, RoutedEventArgs e)
+        {
+            headerTitle.Text = btnProveedores.Content.ToString();
+            headerIcon.Text = btnProveedores.Tag.ToString();
+        }
+
+        private void btnPresentaciones_Click(object sender, RoutedEventArgs e)
+        {
+            headerTitle.Text = btnPresentaciones.Content.ToString();
+            headerIcon.Text = btnPresentaciones.Tag.ToString();
+        }
+
+        private void btnProductos_Click(object sender, RoutedEventArgs e)
+        {
+            headerTitle.Text = btnProductos.Content.ToString();
+            headerIcon.Text = btnProductos.Tag.ToString();
+        }
+
+        private void btnCompras_Click(object sender, RoutedEventArgs e)
+        {
+            headerTitle.Text = btnCompras.Content.ToString();
+            headerIcon.Text = btnCompras.Tag.ToString();
+        }
+
+        private void btnReportes_Click(object sender, RoutedEventArgs e)
+        {
+            headerTitle.Text = btnReportes.Content.ToString();
+            headerIcon.Text = btnReportes.Tag.ToString();
         }
     }
 }
