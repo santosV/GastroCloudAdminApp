@@ -5,10 +5,8 @@
     <RootPropertyPathName Name="SelectedOption" />
     <RootPropertyPathName Name="Width" />
     <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="Icon" />
     <RootPropertyPathName Name="ImagePath" />
-    <RootPropertyPathName Name="name" />
-    <RootPropertyPathName Name="descripcion" />
-    <RootPropertyPathName Name="visible" />
     <RootPropertyPathName Name="index" />
     <RootPropertyPathName Name="Title" />
   </Roots.PropertyPathNames>
@@ -58,6 +56,7 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
@@ -84,6 +83,7 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="MaxHeight" />
+      <RootProperty Name="Name" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Padding" />
@@ -128,7 +128,9 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.VariableSizedWrapGrid">
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="ItemHeight" />
+      <RootProperty Name="Orientation" />
       <RootProperty Name="ItemWidth" />
       <RootProperty Name="MaximumRowsOrColumns" />
       <RootMethod Name="GetColumnSpan" />
@@ -142,8 +144,9 @@
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
       <RootProperty Name="Template" />
@@ -164,10 +167,11 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Background" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Name" />
       <RootProperty Name="PlaceholderText" />
-      <RootProperty Name="Visibility" />
       <RootProperty Name="FontFamily" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Width" />
@@ -264,8 +268,13 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Background" />
       <RootProperty Name="Child" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="CornerRadius" />
       <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="GastroCloud.Views.Almacen.Form" />
+    <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">
+      <RootProperty Name="Source" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="TabIndex" />
@@ -274,15 +283,47 @@
       <RootProperty Name="Background" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
-    <RootType FullName="GastroCloud.Views.Forms" />
-    <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">
-      <RootProperty Name="Source" />
+    <RootType FullName="GastroCloud.Views.Almacen.Index" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Items" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
+      <RootProperty Name="Tag" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="IsSelected" />
+    </RootType>
+    <RootType FullName="GastroCloud.Views.Area.Form" />
+    <RootType FullName="GastroCloud.Views.Descuento.Form" />
+    <RootType FullName="GastroCloud.Views.Empleado.Form" />
+    <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="IsChecked" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="GastroCloud.Views.Extra.Form" />
+    <RootType FullName="GastroCloud.Views.Grupos.Form" />
     <RootType FullName="GastroCloud.Views.Grupos.IndexGroups" />
     <RootType FullName="Windows.UI.Xaml.Controls.MediaElement">
       <RootProperty Name="Source" />
       <RootProperty Name="AreTransportControlsEnabled" />
     </RootType>
     <RootType FullName="GastroCloud.Views.Home.Home" />
+    <RootType FullName="GastroCloud.Views.Insumo.Form" />
+    <RootType FullName="GastroCloud.Views.Mesas.Form" />
+    <RootType FullName="GastroCloud.Views.Paquete.Form" />
+    <RootType FullName="GastroCloud.Views.Producto.Form" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TimePicker" />
+    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="DateFormat" />
+      <RootProperty Name="Name" />
+    </RootType>
+    <RootType FullName="GastroCloud.Views.Promocion.Form" />
+    <RootType FullName="GastroCloud.Views.Proveedor.Form" />
+    <RootType FullName="GastroCloud.Views.Puesto.Form" />
+    <RootType FullName="GastroCloud.Views.UnidadMedida.Form" />
   </Roots.RootTypes>
 </Roots>

@@ -65,6 +65,7 @@
                     <StackPanel Height="10" Background="{StaticResource InkToolbarAccentColorThemeBrush}">
                     </StackPanel>
                 </StackPanel>
+                
                 <Frame x:ConnectionId='13' x:Name="MainFrame" Grid.Row="1" >
 
                 </Frame>

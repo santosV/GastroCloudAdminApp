@@ -95,11 +95,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Binding\Form.cs" />
     <Compile Include="GridResizable\BindableBase.cs" />
     <Compile Include="GridResizable\IResizable.cs" />
     <Compile Include="GridResizable\OpitionsViewModel.cs" />
     <Compile Include="GridResizable\Options.cs" />
     <Compile Include="GridResizable\VariableGridView.cs" />
+    <Compile Include="Helpers\FormsHelper.cs" />
+    <Compile Include="Helpers\OptionHelper.cs" />
     <Compile Include="Layout\MainLayout.xaml.cs">
       <DependentUpon>MainLayout.xaml</DependentUpon>
     </Compile>
@@ -109,16 +112,73 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Almacen.cs" />
+    <Compile Include="Models\Area.cs" />
+    <Compile Include="Models\Descuento.cs" />
+    <Compile Include="Models\Empleado.cs" />
+    <Compile Include="Models\Extra.cs" />
+    <Compile Include="Models\Grupo.cs" />
+    <Compile Include="Models\Insumo.cs" />
+    <Compile Include="Models\Mesas.cs" />
+    <Compile Include="Models\Paquete.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Promocion.cs" />
+    <Compile Include="Models\Proveedor.cs" />
+    <Compile Include="Models\Puesto.cs" />
+    <Compile Include="Models\Unidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniversalPanel.cs" />
-    <Compile Include="Views\Forms.xaml.cs">
-      <DependentUpon>Forms.xaml</DependentUpon>
+    <Compile Include="ViewModels\Forms.cs" />
+    <Compile Include="Views\Almacen\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Almacen\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Area\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Descuento\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Empleado\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Extra\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grupo\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Insumo\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Mesas\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Paquete\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Producto\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Promocion\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Proveedor\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Puesto\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UnidadMedida\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +225,31 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
-    <Page Include="Views\Forms.xaml">
+    <Page Include="Views\Almacen\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Almacen\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Area\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Descuento\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Empleado\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Extra\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Grupo\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,6 +258,38 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Home\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Insumo\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Mesas\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Paquete\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Producto\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Promocion\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Proveedor\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Puesto\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UnidadMedida\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

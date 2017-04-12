@@ -26,5 +26,41 @@ namespace GastroCloud.Layout
         {
             this.InitializeComponent();
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            GridResizable.OptionsViewModel option = new GridResizable.OptionsViewModel();
+            Helpers.OptionHelper opcion = new Helpers.OptionHelper();
+
+            var parameter = e.Parameter as String;
+            switch (parameter)
+            {
+                case "Group":
+                    option.setOption(opcion.optionsGroup);
+                    break;
+                case "Supplies":
+                    option.setOption(opcion.optionsSupplies);
+                    break;
+                case "Storage":
+                    option.setOption(opcion.optionsStorage);
+                    break;
+                case "Product":
+                    option.setOption(opcion.optionsProducts);
+                    break;
+                case "Purchase":
+                    option.setOption(opcion.optionsPurchases);
+                    break;
+                default:
+                    break;
+            }
+            
+                
+            
+            
+
+
+
+        }
     }
 }

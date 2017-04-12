@@ -19,7 +19,7 @@
             <CollectionViewSource
             x:Name="itemsViewSource"
             Source="{Binding index}"/>
-            
+
         </ResourceDictionary>
     </Page.Resources>
     <!--Terminan Recursos-->
@@ -39,9 +39,9 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+
         </Grid>
-        
+
         <GridView
             x:Name="gridTemplate"
             AutomationProperties.AutomationId="ItemGridView"

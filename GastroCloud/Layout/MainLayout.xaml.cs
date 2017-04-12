@@ -50,25 +50,28 @@ namespace GastroCloud.Views
         {
             headerTitle.Text = btnHome.Content.ToString();
             headerIcon.Text = btnHome.Tag.ToString();
-            MainFrame.Navigate(typeof(Views.Forms));
+            MainFrame.Navigate(typeof(Views.Promocion.Form));
         }
 
         private void btnGrupos_Click(object sender, RoutedEventArgs e)
         {
             headerTitle.Text = btnGrupos.Content.ToString();
             headerIcon.Text = btnGrupos.Tag.ToString();
+            MainFrame.Navigate(typeof(Layout.OptionsLayout),"Group");
         }
 
         private void btnAlmacenes_Click(object sender, RoutedEventArgs e)
         {
             headerTitle.Text = btnAlmacenes.Content.ToString();
             headerIcon.Text = btnAlmacenes.Tag.ToString();
+            MainFrame.Navigate(typeof(Layout.OptionsLayout), "Storage");
         }
 
         private void btnInsumos_Click(object sender, RoutedEventArgs e)
         {
             headerTitle.Text = btnInsumos.Content.ToString();
             headerIcon.Text = btnInsumos.Tag.ToString();
+            MainFrame.Navigate(typeof(Layout.OptionsLayout), "Supplies");
         }
 
         private void btnProveedores_Click(object sender, RoutedEventArgs e)
@@ -87,12 +90,14 @@ namespace GastroCloud.Views
         {
             headerTitle.Text = btnProductos.Content.ToString();
             headerIcon.Text = btnProductos.Tag.ToString();
+            MainFrame.Navigate(typeof(Layout.OptionsLayout), "Product");
         }
 
         private void btnCompras_Click(object sender, RoutedEventArgs e)
         {
             headerTitle.Text = btnCompras.Content.ToString();
             headerIcon.Text = btnCompras.Tag.ToString();
+            MainFrame.Navigate(typeof(Layout.OptionsLayout), "Purchase");
         }
 
         private void btnReportes_Click(object sender, RoutedEventArgs e)
