@@ -26,5 +26,10 @@ namespace GastroCloud.Views.Mesas
         {
             this.InitializeComponent();
         }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Views.Mesas.IndexMesas));
+        }
     }
 }

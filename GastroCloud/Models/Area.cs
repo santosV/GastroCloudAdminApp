@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GastroCloud.Models
 {
-    class Area
+    public class Area
     {
         public int id { get; set; }
         public string nombre { get; set; }

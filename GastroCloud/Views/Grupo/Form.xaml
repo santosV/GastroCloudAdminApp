@@ -25,17 +25,23 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <StackPanel Grid.Row="0" Background="{ThemeResource InkToolbarAccentColorThemeBrush}"  Orientation="Horizontal">
+            <Button Style="{StaticResource NavigationBackButtonSmallStyle}" Foreground="{ThemeResource FocusVisualWhiteStrokeThemeBrush}"></Button>
+            <TextBlock FontSize="20" Foreground="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" Name="title" Margin="10,0,0,0">Regisrtro de grupo</TextBlock>
+        </StackPanel>
+
         <!--Menu de opciones-->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <RadioButton Grid.Row="0"  Content="Guardar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
-            <RadioButton Grid.Row="0"  x:Name="btnC" Content="Cancelar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
+            <RadioButton Grid.Row="0"  x:Name="btnC" Content="Cancelar" Click="btnCancelar_Click" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
             <RadioButton Grid.Row="0"  x:Name="btnCar" Content="Eliminar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
         </StackPanel>
 
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer Grid.Row="2">
             <!--Formulario-->
             <StackPanel Grid.Row="1" Orientation="Vertical">
                 <!--Cuadro para imagen-->

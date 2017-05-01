@@ -16,6 +16,7 @@ namespace GastroCloud.GridResizable
         public string Name { get; set; }
         public string Icon { get; set; }
         public string ImagePath { get; set; }
+        public string Tag { get; set; }
         public string Description { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }

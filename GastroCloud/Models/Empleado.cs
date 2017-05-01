@@ -21,21 +21,21 @@ namespace GastroCloud.Models
         {
             List<Empleado> desc = new List<Empleado>();
 
-            desc.Add(new Empleado { id = 1, imagen = ReadImageFile(), nombre = "Santos",apellidos="Vega Arellano",correo="Hjasdja@hdahshd.com",contraseña="123",puestoId=1 });
-            desc.Add(new Empleado { id = 2, imagen = ReadImageFile(), nombre = "Santos", apellidos = "Vega Arellano", correo = "Hjasdja@hdahshd.com", contraseña = "123", puestoId = 1 });
-            desc.Add(new Empleado { id = 3, imagen = ReadImageFile(), nombre = "Santos", apellidos = "Vega Arellano", correo = "Hjasdja@hdahshd.com", contraseña = "123", puestoId = 1 });
-            desc.Add(new Empleado { id = 4, imagen = ReadImageFile(), nombre = "Santos", apellidos = "Vega Arellano", correo = "Hjasdja@hdahshd.com", contraseña = "123", puestoId = 1 });
-            desc.Add(new Empleado { id = 5, imagen = ReadImageFile(), nombre = "Santos", apellidos = "Vega Arellano", correo = "Hjasdja@hdahshd.com", contraseña = "123", puestoId = 1 });
+            desc.Add(new Empleado { id = 1, nombre = "Santos", apellidos="Vega Arellano",correo="Hjasdja@hdahshd.com",contraseña="123",puestoId=1 });
+            desc.Add(new Empleado { id = 2,  nombre = "Santos", apellidos = "Vega Arellano", correo = "Hjasdja@hdahshd.com", contraseña = "123", puestoId = 1 });
+            desc.Add(new Empleado { id = 3,  nombre = "Santos", apellidos = "Vega Arellano", correo = "Hjasdja@hdahshd.com", contraseña = "123", puestoId = 1 });
+            desc.Add(new Empleado { id = 4,  nombre = "Santos", apellidos = "Vega Arellano", correo = "Hjasdja@hdahshd.com", contraseña = "123", puestoId = 1 });
+            desc.Add(new Empleado { id = 5,  nombre = "Santos", apellidos = "Vega Arellano", correo = "Hjasdja@hdahshd.com", contraseña = "123", puestoId = 1 });
 
             return desc;
         }
 
-        public static byte[] ReadImageFile( )
+        public async Task<byte[]> ReadImageFile( )
         {
-            String imageLocation = @"/Assets/images.jpg";
+            String imageLocation = "ms-appx:///Assets/images.jpg";
 
             byte[] imageData = null;
-            FileInfo fileInfo = new FileInfo(imageLocation);
+            FileInfo fileInfo = new FileInfo(@"C:/Users/Santos Vega/Desktop/santos.jpg");
             long imageFileLength = fileInfo.Length;
             FileStream fs = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
             BinaryReader br = new BinaryReader(fs);

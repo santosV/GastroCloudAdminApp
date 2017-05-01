@@ -6,9 +6,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <MediaElement x:ConnectionId='1' x:Name="mediaPlayer" 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Background="{ThemeResource InkToolbarAccentColorThemeBrush}"  Orientation="Horizontal">
+            <TextBlock x:ConnectionId='2' FontSize="20" Foreground="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" Name="title" Margin="10,0,0,0">Bienvenido a GastroCloud</TextBlock>
+        </StackPanel>
+        <MediaElement x:ConnectionId='1' Grid.Row="1" x:Name="mediaPlayer" 
               Source="ms-appx:///Assets/intro.mp4"
               AreTransportControlsEnabled="True"/>
+        
+    </Grid>
+    
 </Page>
 

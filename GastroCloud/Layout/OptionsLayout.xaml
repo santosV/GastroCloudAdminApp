@@ -6,7 +6,7 @@
     xmlns:local="using:GastroCloud.GridResizable"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" SizeChanged="Page_SizeChanged">
 
     <Page.DataContext>
         <local:OptionsViewModel/>
@@ -14,66 +14,48 @@
 
 
 
-    <Grid>
+    <Grid Margin="15,10,15,10">
         <Grid.Background>
-            <SolidColorBrush Color="White" Opacity="0"/>
+            <ImageBrush Opacity="0.35" Stretch="UniformToFill" ImageSource="ms-appx:///Assets/backgorund.jpg"/>
         </Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="auto" />
-        </Grid.RowDefinitions>
 
 
-        <TextBlock Text="menú"
-                   FontSize="28"
-                   Margin="8" />
-        <local:VariableGridView  Grid.Row="1"
-                                    IsSwipeEnabled="True"
-                                    ScrollViewer.HorizontalScrollMode="Enabled"
-                                    ScrollViewer.VerticalScrollMode="Enabled"
-                                    ScrollViewer.HorizontalScrollBarVisibility="Visible"
-                                ItemsSource="{Binding options}"
-                                SelectedItem="{Binding SelectedOption, Mode=TwoWay}" >
-            <local:VariableGridView.Background>
-                <SolidColorBrush Color="White" Opacity="0"/>
-            </local:VariableGridView.Background>
-            <local:VariableGridView.ItemTemplate>
-
+        <GridView
+            HorizontalAlignment="Center"
+            x:Name="gridOpciones"
+            AutomationProperties.AutomationId="ItemGridView"
+            AutomationProperties.Name="Items In Group"
+            TabIndex="1"
+            Margin="0,7,0,0"
+            Grid.RowSpan="2"
+            Grid.Row="1"
+            ItemsSource="{Binding options}"
+            SelectedItem="{Binding SelectedOption, Mode=TwoWay}" 
+            Padding="0"
+            SelectionMode="Single"
+            IsSwipeEnabled="True" Background="{StaticResource SystemControlDisabledTransparentBrush}">
+            <GridView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="2" Background="{StaticResource InkToolbarAccentColorThemeBrush}" VariableSizedWrapGrid.ColumnSpan="{Binding Width}">
+                    <Grid Margin="0,0,10,10" x:Name="optionItem" HorizontalAlignment="Center" Height="180" Width="180"  Tag="{Binding Tag}"  PointerPressed="Grid_PointerPressed"> 
 
-
-                        <Image Source="{Binding ImagePath}" Stretch="UniformToFill" Opacity="0"/>
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
-                            <TextBlock  Padding="4" FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}"  FontSize="100" Foreground="White"/>
+                        <StackPanel Background="{ThemeResource InkToolbarAccentColorThemeBrush}">
+                            <Rectangle Width="180" ></Rectangle>
                         </StackPanel>
-
-                        <StackPanel  Margin="4"
-                                    VerticalAlignment="Bottom"
-                                    HorizontalAlignment="Left">
-                            <TextBlock Text="{Binding Name}"
-                                       HorizontalAlignment="Center"
-                                       Foreground="White"
-                                       FontSize="16"
-                                       Margin="6" />
+                        <Image x:Name="image" Stretch="UniformToFill"  Source="{Binding ImagePath}"/>
+                        <StackPanel x:Name="st" Background="Black" Opacity="0.45" >
+                            <Rectangle Width="120"></Rectangle>
+                        </StackPanel>
+                        
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock  Padding="4" FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}"  FontSize="90" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock  Padding="4" Text="{Binding Name}"  FontSize="12" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
-            </local:VariableGridView.ItemTemplate>
-            <local:VariableGridView.ItemsPanel>
-                <ItemsPanelTemplate>
+            </GridView.ItemTemplate>
 
-                    <VariableSizedWrapGrid VerticalAlignment="Top"
-                                           HorizontalAlignment="Stretch"
-                                           ItemHeight="150"
-                                           Orientation="Horizontal"
-                                           ItemWidth="150"
-                                           MaximumRowsOrColumns="{Binding MaximumRowsOrColumns}"  />
-                </ItemsPanelTemplate>
-            </local:VariableGridView.ItemsPanel>
-        </local:VariableGridView>
 
+        </GridView>
     </Grid>
-
+    
 </Page>

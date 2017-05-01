@@ -3,6 +3,15 @@
   "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
+      "Callisto/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Callisto.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Callisto.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1962,6 +1971,15 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "Callisto/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Callisto.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Callisto.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3776,6 +3794,15 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "Callisto/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Callisto.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Callisto.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -5547,6 +5574,15 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "Callisto/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Callisto.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Callisto.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -7370,6 +7406,15 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "Callisto/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Callisto.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Callisto.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -9141,6 +9186,15 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "Callisto/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Callisto.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Callisto.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -10964,6 +11018,15 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "Callisto/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Callisto.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Callisto.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -12736,6 +12799,17 @@
     }
   },
   "libraries": {
+    "Callisto/1.4.0": {
+      "sha512": "q2oErc+4l2MdiZu9h9YmEIQrZCC/I2o1t2gMNuLU36JDG6HDcy/oh98xvJ9s84hMuX5oBR8whEx78INUhvbBfg==",
+      "type": "package",
+      "files": [
+        "Callisto.1.4.0.nupkg.sha512",
+        "Callisto.nuspec",
+        "lib/netcore451/Callisto.dll",
+        "lib/netcore451/Callisto.pri",
+        "lib/netcore451/Callisto/Themes/Generic.xbf"
+      ]
+    },
     "Microsoft.CSharp/4.0.0": {
       "sha512": "oWqeKUxHXdK6dL2CFjgMcaBISbkk+AqEg+yvJHE4DElNzS4QaTsCflgkkqZwVlWby1Dg9zo9n+iCAMFefFdJ/A==",
       "type": "package",
@@ -16097,6 +16171,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "Callisto >= 1.4.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0",
       "Microsoft.Toolkit.Uwp.UI.Animations >= 1.4.1"
     ],

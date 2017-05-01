@@ -67,6 +67,18 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
+            var userXamlType = xamlType as global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
+            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -90,6 +102,18 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
+            }
+            var userXamlType = xamlType as global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
             }
             if (xamlType != null)
             {
@@ -132,7 +156,7 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[45];
+            _typeNameTable = new string[69];
             _typeNameTable[0] = "GastroCloud.Views.MainLayout";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -144,42 +168,66 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
             _typeNameTable[8] = "String";
             _typeNameTable[9] = "Int32";
             _typeNameTable[10] = "Windows.UI.Xaml.Media.ImageSource";
-            _typeNameTable[11] = "GastroCloud.GridResizable.VariableGridView";
-            _typeNameTable[12] = "Windows.UI.Xaml.Controls.GridView";
-            _typeNameTable[13] = "Windows.UI.Xaml.Controls.ItemsControl";
-            _typeNameTable[14] = "GastroCloud.Layout.OptionsLayout";
-            _typeNameTable[15] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[16] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[17] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[18] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[19] = "Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur";
-            _typeNameTable[20] = "Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>";
-            _typeNameTable[21] = "Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.BehaviorBase`1<Windows.UI.Xaml.FrameworkElement>";
-            _typeNameTable[22] = "Microsoft.Xaml.Interactivity.Behavior`1<Windows.UI.Xaml.FrameworkElement>";
-            _typeNameTable[23] = "Microsoft.Xaml.Interactivity.Behavior";
-            _typeNameTable[24] = "Double";
-            _typeNameTable[25] = "Boolean";
-            _typeNameTable[26] = "Windows.UI.Xaml.FrameworkElement";
-            _typeNameTable[27] = "GastroCloud.MainPage";
-            _typeNameTable[28] = "GastroCloud.Views.Almacen.Form";
-            _typeNameTable[29] = "GastroCloud.Views.Almacen.Index";
-            _typeNameTable[30] = "GastroCloud.Views.Area.Form";
-            _typeNameTable[31] = "GastroCloud.Views.Descuento.Form";
-            _typeNameTable[32] = "GastroCloud.Views.Empleado.Form";
-            _typeNameTable[33] = "GastroCloud.Views.Extra.Form";
-            _typeNameTable[34] = "GastroCloud.Views.Grupos.Form";
-            _typeNameTable[35] = "GastroCloud.Views.Grupos.IndexGroups";
-            _typeNameTable[36] = "GastroCloud.Views.Home.Home";
-            _typeNameTable[37] = "GastroCloud.Views.Insumo.Form";
-            _typeNameTable[38] = "GastroCloud.Views.Mesas.Form";
-            _typeNameTable[39] = "GastroCloud.Views.Paquete.Form";
-            _typeNameTable[40] = "GastroCloud.Views.Producto.Form";
-            _typeNameTable[41] = "GastroCloud.Views.Promocion.Form";
-            _typeNameTable[42] = "GastroCloud.Views.Proveedor.Form";
-            _typeNameTable[43] = "GastroCloud.Views.Puesto.Form";
-            _typeNameTable[44] = "GastroCloud.Views.UnidadMedida.Form";
+            _typeNameTable[11] = "Double";
+            _typeNameTable[12] = "GastroCloud.Layout.OptionsLayout";
+            _typeNameTable[13] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[14] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[15] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[16] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[17] = "Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur";
+            _typeNameTable[18] = "Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>";
+            _typeNameTable[19] = "Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.BehaviorBase`1<Windows.UI.Xaml.FrameworkElement>";
+            _typeNameTable[20] = "Microsoft.Xaml.Interactivity.Behavior`1<Windows.UI.Xaml.FrameworkElement>";
+            _typeNameTable[21] = "Microsoft.Xaml.Interactivity.Behavior";
+            _typeNameTable[22] = "Boolean";
+            _typeNameTable[23] = "Windows.UI.Xaml.FrameworkElement";
+            _typeNameTable[24] = "GastroCloud.MainPage";
+            _typeNameTable[25] = "GastroCloud.Views.Almacen.FormAlmacen";
+            _typeNameTable[26] = "GastroCloud.Views.Almacen.IndexAlmacen";
+            _typeNameTable[27] = "GastroCloud.Views.Almacen.ItemDetailRecipeView";
+            _typeNameTable[28] = "GastroCloud.Views.Almacen.Movimientos.MovementView";
+            _typeNameTable[29] = "GastroCloud.Views.Almacen.Movimientos.MovePresentationView";
+            _typeNameTable[30] = "GastroCloud.Views.Almacen.SearchRecipeView";
+            _typeNameTable[31] = "GastroCloud.Views.Area.AreaView";
+            _typeNameTable[32] = "GastroCloud.Views.Area.Form";
+            _typeNameTable[33] = "GastroCloud.Views.Area.Index";
+            _typeNameTable[34] = "GastroCloud.Views.Descuento.Form";
+            _typeNameTable[35] = "GastroCloud.Views.Descuento.Index";
+            _typeNameTable[36] = "GastroCloud.Views.Empleado.Form";
+            _typeNameTable[37] = "GastroCloud.Views.Empleado.IndexEmpleado";
+            _typeNameTable[38] = "GastroCloud.Views.Extra.Form";
+            _typeNameTable[39] = "GastroCloud.Views.Extra.IndexExtras";
+            _typeNameTable[40] = "GastroCloud.Views.Grupos.Form";
+            _typeNameTable[41] = "GastroCloud.Views.Grupo.IndexGrupo";
+            _typeNameTable[42] = "GastroCloud.Views.Grupo.Personalizado.CustomGroup";
+            _typeNameTable[43] = "GastroCloud.Views.Grupo.Personalizado.FormCustomGroup";
+            _typeNameTable[44] = "GastroCloud.Views.Grupo.Personalizado.FormPortion";
+            _typeNameTable[45] = "GastroCloud.Views.Grupo.Personalizado.ItemDetailRecipeView";
+            _typeNameTable[46] = "GastroCloud.Views.Grupo.Personalizado.SearchRecipeView";
+            _typeNameTable[47] = "GastroCloud.Views.Home.Home";
+            _typeNameTable[48] = "GastroCloud.Views.Insumo.Form";
+            _typeNameTable[49] = "GastroCloud.Views.Insumo.IndexInsumos";
+            _typeNameTable[50] = "GastroCloud.Views.Mesas.Form";
+            _typeNameTable[51] = "GastroCloud.Views.Mesas.IndexMesas";
+            _typeNameTable[52] = "GastroCloud.Views.Paquete.DetailsPaquete";
+            _typeNameTable[53] = "GastroCloud.Views.Paquete.Form";
+            _typeNameTable[54] = "GastroCloud.Views.Paquete.IndexPaquetes";
+            _typeNameTable[55] = "GastroCloud.Views.Producto.DetailsProducto";
+            _typeNameTable[56] = "GastroCloud.Views.Producto.Form";
+            _typeNameTable[57] = "GastroCloud.Views.Producto.IndexProductos";
+            _typeNameTable[58] = "GastroCloud.Views.Promocion.DetailsPromocion";
+            _typeNameTable[59] = "GastroCloud.Views.Promocion.Form";
+            _typeNameTable[60] = "GastroCloud.Views.Promocion.IndexPromocion";
+            _typeNameTable[61] = "GastroCloud.Views.Proveedor.Form";
+            _typeNameTable[62] = "GastroCloud.Views.Proveedor.IndexProveedor";
+            _typeNameTable[63] = "GastroCloud.Views.Puesto.DetailsPuestos";
+            _typeNameTable[64] = "GastroCloud.Views.Puesto.Form";
+            _typeNameTable[65] = "GastroCloud.Views.Puesto.IndexPuestos";
+            _typeNameTable[66] = "GastroCloud.Views.Receta.IndexReceta";
+            _typeNameTable[67] = "GastroCloud.Views.UnidadMedida.Form";
+            _typeNameTable[68] = "GastroCloud.Views.UnidadMedida.Index";
 
-            _typeTable = new global::System.Type[45];
+            _typeTable = new global::System.Type[69];
             _typeTable[0] = typeof(global::GastroCloud.Views.MainLayout);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -191,40 +239,64 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
             _typeTable[8] = typeof(global::System.String);
             _typeTable[9] = typeof(global::System.Int32);
             _typeTable[10] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
-            _typeTable[11] = typeof(global::GastroCloud.GridResizable.VariableGridView);
-            _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.GridView);
-            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.ItemsControl);
-            _typeTable[14] = typeof(global::GastroCloud.Layout.OptionsLayout);
-            _typeTable[15] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[16] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[17] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[18] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[19] = typeof(global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur);
-            _typeTable[20] = typeof(global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase<global::Windows.UI.Xaml.FrameworkElement>);
-            _typeTable[21] = typeof(global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.BehaviorBase<global::Windows.UI.Xaml.FrameworkElement>);
-            _typeTable[22] = typeof(global::Microsoft.Xaml.Interactivity.Behavior<global::Windows.UI.Xaml.FrameworkElement>);
-            _typeTable[23] = typeof(global::Microsoft.Xaml.Interactivity.Behavior);
-            _typeTable[24] = typeof(global::System.Double);
-            _typeTable[25] = typeof(global::System.Boolean);
-            _typeTable[26] = typeof(global::Windows.UI.Xaml.FrameworkElement);
-            _typeTable[27] = typeof(global::GastroCloud.MainPage);
-            _typeTable[28] = typeof(global::GastroCloud.Views.Almacen.Form);
-            _typeTable[29] = typeof(global::GastroCloud.Views.Almacen.Index);
-            _typeTable[30] = typeof(global::GastroCloud.Views.Area.Form);
-            _typeTable[31] = typeof(global::GastroCloud.Views.Descuento.Form);
-            _typeTable[32] = typeof(global::GastroCloud.Views.Empleado.Form);
-            _typeTable[33] = typeof(global::GastroCloud.Views.Extra.Form);
-            _typeTable[34] = typeof(global::GastroCloud.Views.Grupos.Form);
-            _typeTable[35] = typeof(global::GastroCloud.Views.Grupos.IndexGroups);
-            _typeTable[36] = typeof(global::GastroCloud.Views.Home.Home);
-            _typeTable[37] = typeof(global::GastroCloud.Views.Insumo.Form);
-            _typeTable[38] = typeof(global::GastroCloud.Views.Mesas.Form);
-            _typeTable[39] = typeof(global::GastroCloud.Views.Paquete.Form);
-            _typeTable[40] = typeof(global::GastroCloud.Views.Producto.Form);
-            _typeTable[41] = typeof(global::GastroCloud.Views.Promocion.Form);
-            _typeTable[42] = typeof(global::GastroCloud.Views.Proveedor.Form);
-            _typeTable[43] = typeof(global::GastroCloud.Views.Puesto.Form);
-            _typeTable[44] = typeof(global::GastroCloud.Views.UnidadMedida.Form);
+            _typeTable[11] = typeof(global::System.Double);
+            _typeTable[12] = typeof(global::GastroCloud.Layout.OptionsLayout);
+            _typeTable[13] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[14] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[15] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[16] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[17] = typeof(global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur);
+            _typeTable[18] = typeof(global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase<global::Windows.UI.Xaml.FrameworkElement>);
+            _typeTable[19] = typeof(global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.BehaviorBase<global::Windows.UI.Xaml.FrameworkElement>);
+            _typeTable[20] = typeof(global::Microsoft.Xaml.Interactivity.Behavior<global::Windows.UI.Xaml.FrameworkElement>);
+            _typeTable[21] = typeof(global::Microsoft.Xaml.Interactivity.Behavior);
+            _typeTable[22] = typeof(global::System.Boolean);
+            _typeTable[23] = typeof(global::Windows.UI.Xaml.FrameworkElement);
+            _typeTable[24] = typeof(global::GastroCloud.MainPage);
+            _typeTable[25] = typeof(global::GastroCloud.Views.Almacen.FormAlmacen);
+            _typeTable[26] = typeof(global::GastroCloud.Views.Almacen.IndexAlmacen);
+            _typeTable[27] = typeof(global::GastroCloud.Views.Almacen.ItemDetailRecipeView);
+            _typeTable[28] = typeof(global::GastroCloud.Views.Almacen.Movimientos.MovementView);
+            _typeTable[29] = typeof(global::GastroCloud.Views.Almacen.Movimientos.MovePresentationView);
+            _typeTable[30] = typeof(global::GastroCloud.Views.Almacen.SearchRecipeView);
+            _typeTable[31] = typeof(global::GastroCloud.Views.Area.AreaView);
+            _typeTable[32] = typeof(global::GastroCloud.Views.Area.Form);
+            _typeTable[33] = typeof(global::GastroCloud.Views.Area.Index);
+            _typeTable[34] = typeof(global::GastroCloud.Views.Descuento.Form);
+            _typeTable[35] = typeof(global::GastroCloud.Views.Descuento.Index);
+            _typeTable[36] = typeof(global::GastroCloud.Views.Empleado.Form);
+            _typeTable[37] = typeof(global::GastroCloud.Views.Empleado.IndexEmpleado);
+            _typeTable[38] = typeof(global::GastroCloud.Views.Extra.Form);
+            _typeTable[39] = typeof(global::GastroCloud.Views.Extra.IndexExtras);
+            _typeTable[40] = typeof(global::GastroCloud.Views.Grupos.Form);
+            _typeTable[41] = typeof(global::GastroCloud.Views.Grupo.IndexGrupo);
+            _typeTable[42] = typeof(global::GastroCloud.Views.Grupo.Personalizado.CustomGroup);
+            _typeTable[43] = typeof(global::GastroCloud.Views.Grupo.Personalizado.FormCustomGroup);
+            _typeTable[44] = typeof(global::GastroCloud.Views.Grupo.Personalizado.FormPortion);
+            _typeTable[45] = typeof(global::GastroCloud.Views.Grupo.Personalizado.ItemDetailRecipeView);
+            _typeTable[46] = typeof(global::GastroCloud.Views.Grupo.Personalizado.SearchRecipeView);
+            _typeTable[47] = typeof(global::GastroCloud.Views.Home.Home);
+            _typeTable[48] = typeof(global::GastroCloud.Views.Insumo.Form);
+            _typeTable[49] = typeof(global::GastroCloud.Views.Insumo.IndexInsumos);
+            _typeTable[50] = typeof(global::GastroCloud.Views.Mesas.Form);
+            _typeTable[51] = typeof(global::GastroCloud.Views.Mesas.IndexMesas);
+            _typeTable[52] = typeof(global::GastroCloud.Views.Paquete.DetailsPaquete);
+            _typeTable[53] = typeof(global::GastroCloud.Views.Paquete.Form);
+            _typeTable[54] = typeof(global::GastroCloud.Views.Paquete.IndexPaquetes);
+            _typeTable[55] = typeof(global::GastroCloud.Views.Producto.DetailsProducto);
+            _typeTable[56] = typeof(global::GastroCloud.Views.Producto.Form);
+            _typeTable[57] = typeof(global::GastroCloud.Views.Producto.IndexProductos);
+            _typeTable[58] = typeof(global::GastroCloud.Views.Promocion.DetailsPromocion);
+            _typeTable[59] = typeof(global::GastroCloud.Views.Promocion.Form);
+            _typeTable[60] = typeof(global::GastroCloud.Views.Promocion.IndexPromocion);
+            _typeTable[61] = typeof(global::GastroCloud.Views.Proveedor.Form);
+            _typeTable[62] = typeof(global::GastroCloud.Views.Proveedor.IndexProveedor);
+            _typeTable[63] = typeof(global::GastroCloud.Views.Puesto.DetailsPuestos);
+            _typeTable[64] = typeof(global::GastroCloud.Views.Puesto.Form);
+            _typeTable[65] = typeof(global::GastroCloud.Views.Puesto.IndexPuestos);
+            _typeTable[66] = typeof(global::GastroCloud.Views.Receta.IndexReceta);
+            _typeTable[67] = typeof(global::GastroCloud.Views.UnidadMedida.Form);
+            _typeTable[68] = typeof(global::GastroCloud.Views.UnidadMedida.Index);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -263,35 +335,61 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
         private object Activate_3_OptionsViewModel() { return new global::GastroCloud.GridResizable.OptionsViewModel(); }
         private object Activate_6_List() { return new global::System.Collections.Generic.List<global::GastroCloud.GridResizable.Options>(); }
         private object Activate_7_Options() { return new global::GastroCloud.GridResizable.Options(); }
-        private object Activate_11_VariableGridView() { return new global::GastroCloud.GridResizable.VariableGridView(); }
-        private object Activate_14_OptionsLayout() { return new global::GastroCloud.Layout.OptionsLayout(); }
-        private object Activate_16_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_19_Blur() { return new global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur(); }
-        private object Activate_27_MainPage() { return new global::GastroCloud.MainPage(); }
-        private object Activate_28_Form() { return new global::GastroCloud.Views.Almacen.Form(); }
-        private object Activate_29_Index() { return new global::GastroCloud.Views.Almacen.Index(); }
-        private object Activate_30_Form() { return new global::GastroCloud.Views.Area.Form(); }
-        private object Activate_31_Form() { return new global::GastroCloud.Views.Descuento.Form(); }
-        private object Activate_32_Form() { return new global::GastroCloud.Views.Empleado.Form(); }
-        private object Activate_33_Form() { return new global::GastroCloud.Views.Extra.Form(); }
-        private object Activate_34_Form() { return new global::GastroCloud.Views.Grupos.Form(); }
-        private object Activate_35_IndexGroups() { return new global::GastroCloud.Views.Grupos.IndexGroups(); }
-        private object Activate_36_Home() { return new global::GastroCloud.Views.Home.Home(); }
-        private object Activate_37_Form() { return new global::GastroCloud.Views.Insumo.Form(); }
-        private object Activate_38_Form() { return new global::GastroCloud.Views.Mesas.Form(); }
-        private object Activate_39_Form() { return new global::GastroCloud.Views.Paquete.Form(); }
-        private object Activate_40_Form() { return new global::GastroCloud.Views.Producto.Form(); }
-        private object Activate_41_Form() { return new global::GastroCloud.Views.Promocion.Form(); }
-        private object Activate_42_Form() { return new global::GastroCloud.Views.Proveedor.Form(); }
-        private object Activate_43_Form() { return new global::GastroCloud.Views.Puesto.Form(); }
-        private object Activate_44_Form() { return new global::GastroCloud.Views.UnidadMedida.Form(); }
+        private object Activate_12_OptionsLayout() { return new global::GastroCloud.Layout.OptionsLayout(); }
+        private object Activate_14_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_17_Blur() { return new global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur(); }
+        private object Activate_24_MainPage() { return new global::GastroCloud.MainPage(); }
+        private object Activate_25_FormAlmacen() { return new global::GastroCloud.Views.Almacen.FormAlmacen(); }
+        private object Activate_26_IndexAlmacen() { return new global::GastroCloud.Views.Almacen.IndexAlmacen(); }
+        private object Activate_27_ItemDetailRecipeView() { return new global::GastroCloud.Views.Almacen.ItemDetailRecipeView(); }
+        private object Activate_28_MovementView() { return new global::GastroCloud.Views.Almacen.Movimientos.MovementView(); }
+        private object Activate_29_MovePresentationView() { return new global::GastroCloud.Views.Almacen.Movimientos.MovePresentationView(); }
+        private object Activate_30_SearchRecipeView() { return new global::GastroCloud.Views.Almacen.SearchRecipeView(); }
+        private object Activate_31_AreaView() { return new global::GastroCloud.Views.Area.AreaView(); }
+        private object Activate_32_Form() { return new global::GastroCloud.Views.Area.Form(); }
+        private object Activate_33_Index() { return new global::GastroCloud.Views.Area.Index(); }
+        private object Activate_34_Form() { return new global::GastroCloud.Views.Descuento.Form(); }
+        private object Activate_35_Index() { return new global::GastroCloud.Views.Descuento.Index(); }
+        private object Activate_36_Form() { return new global::GastroCloud.Views.Empleado.Form(); }
+        private object Activate_37_IndexEmpleado() { return new global::GastroCloud.Views.Empleado.IndexEmpleado(); }
+        private object Activate_38_Form() { return new global::GastroCloud.Views.Extra.Form(); }
+        private object Activate_39_IndexExtras() { return new global::GastroCloud.Views.Extra.IndexExtras(); }
+        private object Activate_40_Form() { return new global::GastroCloud.Views.Grupos.Form(); }
+        private object Activate_41_IndexGrupo() { return new global::GastroCloud.Views.Grupo.IndexGrupo(); }
+        private object Activate_42_CustomGroup() { return new global::GastroCloud.Views.Grupo.Personalizado.CustomGroup(); }
+        private object Activate_43_FormCustomGroup() { return new global::GastroCloud.Views.Grupo.Personalizado.FormCustomGroup(); }
+        private object Activate_44_FormPortion() { return new global::GastroCloud.Views.Grupo.Personalizado.FormPortion(); }
+        private object Activate_45_ItemDetailRecipeView() { return new global::GastroCloud.Views.Grupo.Personalizado.ItemDetailRecipeView(); }
+        private object Activate_46_SearchRecipeView() { return new global::GastroCloud.Views.Grupo.Personalizado.SearchRecipeView(); }
+        private object Activate_47_Home() { return new global::GastroCloud.Views.Home.Home(); }
+        private object Activate_48_Form() { return new global::GastroCloud.Views.Insumo.Form(); }
+        private object Activate_49_IndexInsumos() { return new global::GastroCloud.Views.Insumo.IndexInsumos(); }
+        private object Activate_50_Form() { return new global::GastroCloud.Views.Mesas.Form(); }
+        private object Activate_51_IndexMesas() { return new global::GastroCloud.Views.Mesas.IndexMesas(); }
+        private object Activate_52_DetailsPaquete() { return new global::GastroCloud.Views.Paquete.DetailsPaquete(); }
+        private object Activate_53_Form() { return new global::GastroCloud.Views.Paquete.Form(); }
+        private object Activate_54_IndexPaquetes() { return new global::GastroCloud.Views.Paquete.IndexPaquetes(); }
+        private object Activate_55_DetailsProducto() { return new global::GastroCloud.Views.Producto.DetailsProducto(); }
+        private object Activate_56_Form() { return new global::GastroCloud.Views.Producto.Form(); }
+        private object Activate_57_IndexProductos() { return new global::GastroCloud.Views.Producto.IndexProductos(); }
+        private object Activate_58_DetailsPromocion() { return new global::GastroCloud.Views.Promocion.DetailsPromocion(); }
+        private object Activate_59_Form() { return new global::GastroCloud.Views.Promocion.Form(); }
+        private object Activate_60_IndexPromocion() { return new global::GastroCloud.Views.Promocion.IndexPromocion(); }
+        private object Activate_61_Form() { return new global::GastroCloud.Views.Proveedor.Form(); }
+        private object Activate_62_IndexProveedor() { return new global::GastroCloud.Views.Proveedor.IndexProveedor(); }
+        private object Activate_63_DetailsPuestos() { return new global::GastroCloud.Views.Puesto.DetailsPuestos(); }
+        private object Activate_64_Form() { return new global::GastroCloud.Views.Puesto.Form(); }
+        private object Activate_65_IndexPuestos() { return new global::GastroCloud.Views.Puesto.IndexPuestos(); }
+        private object Activate_66_IndexReceta() { return new global::GastroCloud.Views.Receta.IndexReceta(); }
+        private object Activate_67_Form() { return new global::GastroCloud.Views.UnidadMedida.Form(); }
+        private object Activate_68_Index() { return new global::GastroCloud.Views.UnidadMedida.Index(); }
         private void VectorAdd_6_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::GastroCloud.GridResizable.Options>)instance;
             var newItem = (global::GastroCloud.GridResizable.Options)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_16_BehaviorCollection(object instance, object item)
+        private void VectorAdd_14_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
@@ -327,6 +425,8 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GastroCloud.GridResizable.BindableBase"));
                 userType.Activator = Activate_3_OptionsViewModel;
                 userType.AddMemberName("options");
+                userType.AddMemberName("MaximumRowsOrColumns");
+                userType.AddMemberName("itemSize");
                 userType.AddMemberName("SelectedOption");
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -355,6 +455,7 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
                 userType.AddMemberName("Name");
                 userType.AddMemberName("Icon");
                 userType.AddMemberName("ImagePath");
+                userType.AddMemberName("Tag");
                 userType.AddMemberName("Description");
                 userType.AddMemberName("Width");
                 userType.AddMemberName("Height");
@@ -375,57 +476,46 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
                 xamlType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  GastroCloud.GridResizable.VariableGridView
-                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.GridView"));
-                userType.Activator = Activate_11_VariableGridView;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 12:   //  Windows.UI.Xaml.Controls.GridView
+            case 11:   //  Double
                 xamlType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  Windows.UI.Xaml.Controls.ItemsControl
-                xamlType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 14:   //  GastroCloud.Layout.OptionsLayout
+            case 12:   //  GastroCloud.Layout.OptionsLayout
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_OptionsLayout;
+                userType.Activator = Activate_12_OptionsLayout;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 15:   //  Microsoft.Xaml.Interactivity.Interaction
+            case 13:   //  Microsoft.Xaml.Interactivity.Interaction
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Behaviors");
                 xamlType = userType;
                 break;
 
-            case 16:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+            case 14:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_16_BehaviorCollection;
+                userType.CollectionAdd = VectorAdd_14_BehaviorCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 17:   //  Windows.UI.Xaml.DependencyObjectCollection
+            case 15:   //  Windows.UI.Xaml.DependencyObjectCollection
                 xamlType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  Windows.UI.Xaml.DependencyObject
+            case 16:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 19:   //  Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur
+            case 17:   //  Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>"));
-                userType.Activator = Activate_19_Blur;
+                userType.Activator = Activate_17_Blur;
                 userType.AddMemberName("Value");
                 xamlType = userType;
                 break;
 
-            case 20:   //  Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>
+            case 18:   //  Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.BehaviorBase`1<Windows.UI.Xaml.FrameworkElement>"));
                 userType.AddMemberName("AutomaticallyStart");
                 userType.AddMemberName("Delay");
@@ -433,156 +523,341 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 21:   //  Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.BehaviorBase`1<Windows.UI.Xaml.FrameworkElement>
+            case 19:   //  Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.BehaviorBase`1<Windows.UI.Xaml.FrameworkElement>
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior`1<Windows.UI.Xaml.FrameworkElement>"));
                 xamlType = userType;
                 break;
 
-            case 22:   //  Microsoft.Xaml.Interactivity.Behavior`1<Windows.UI.Xaml.FrameworkElement>
+            case 20:   //  Microsoft.Xaml.Interactivity.Behavior`1<Windows.UI.Xaml.FrameworkElement>
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior"));
                 userType.AddMemberName("AssociatedObject");
                 xamlType = userType;
                 break;
 
-            case 23:   //  Microsoft.Xaml.Interactivity.Behavior
+            case 21:   //  Microsoft.Xaml.Interactivity.Behavior
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 xamlType = userType;
                 break;
 
-            case 24:   //  Double
+            case 22:   //  Boolean
                 xamlType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 25:   //  Boolean
+            case 23:   //  Windows.UI.Xaml.FrameworkElement
                 xamlType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 26:   //  Windows.UI.Xaml.FrameworkElement
-                xamlType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 27:   //  GastroCloud.MainPage
+            case 24:   //  GastroCloud.MainPage
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_27_MainPage;
+                userType.Activator = Activate_24_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 28:   //  GastroCloud.Views.Almacen.Form
+            case 25:   //  GastroCloud.Views.Almacen.FormAlmacen
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_28_Form;
+                userType.Activator = Activate_25_FormAlmacen;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 29:   //  GastroCloud.Views.Almacen.Index
+            case 26:   //  GastroCloud.Views.Almacen.IndexAlmacen
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_29_Index;
+                userType.Activator = Activate_26_IndexAlmacen;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 30:   //  GastroCloud.Views.Area.Form
+            case 27:   //  GastroCloud.Views.Almacen.ItemDetailRecipeView
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_30_Form;
+                userType.Activator = Activate_27_ItemDetailRecipeView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 31:   //  GastroCloud.Views.Descuento.Form
+            case 28:   //  GastroCloud.Views.Almacen.Movimientos.MovementView
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_31_Form;
+                userType.Activator = Activate_28_MovementView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 32:   //  GastroCloud.Views.Empleado.Form
+            case 29:   //  GastroCloud.Views.Almacen.Movimientos.MovePresentationView
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_29_MovePresentationView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 30:   //  GastroCloud.Views.Almacen.SearchRecipeView
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_30_SearchRecipeView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 31:   //  GastroCloud.Views.Area.AreaView
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_31_AreaView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 32:   //  GastroCloud.Views.Area.Form
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_32_Form;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 33:   //  GastroCloud.Views.Extra.Form
+            case 33:   //  GastroCloud.Views.Area.Index
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_33_Form;
+                userType.Activator = Activate_33_Index;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 34:   //  GastroCloud.Views.Grupos.Form
+            case 34:   //  GastroCloud.Views.Descuento.Form
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_34_Form;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 35:   //  GastroCloud.Views.Grupos.IndexGroups
+            case 35:   //  GastroCloud.Views.Descuento.Index
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_35_IndexGroups;
+                userType.Activator = Activate_35_Index;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 36:   //  GastroCloud.Views.Home.Home
+            case 36:   //  GastroCloud.Views.Empleado.Form
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_36_Home;
+                userType.Activator = Activate_36_Form;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 37:   //  GastroCloud.Views.Insumo.Form
+            case 37:   //  GastroCloud.Views.Empleado.IndexEmpleado
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_37_Form;
+                userType.Activator = Activate_37_IndexEmpleado;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 38:   //  GastroCloud.Views.Mesas.Form
+            case 38:   //  GastroCloud.Views.Extra.Form
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_38_Form;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 39:   //  GastroCloud.Views.Paquete.Form
+            case 39:   //  GastroCloud.Views.Extra.IndexExtras
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_39_Form;
+                userType.Activator = Activate_39_IndexExtras;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 40:   //  GastroCloud.Views.Producto.Form
+            case 40:   //  GastroCloud.Views.Grupos.Form
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_40_Form;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 41:   //  GastroCloud.Views.Promocion.Form
+            case 41:   //  GastroCloud.Views.Grupo.IndexGrupo
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_41_Form;
+                userType.Activator = Activate_41_IndexGrupo;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 42:   //  GastroCloud.Views.Proveedor.Form
+            case 42:   //  GastroCloud.Views.Grupo.Personalizado.CustomGroup
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_42_Form;
+                userType.Activator = Activate_42_CustomGroup;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 43:   //  GastroCloud.Views.Puesto.Form
+            case 43:   //  GastroCloud.Views.Grupo.Personalizado.FormCustomGroup
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_43_Form;
+                userType.Activator = Activate_43_FormCustomGroup;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 44:   //  GastroCloud.Views.UnidadMedida.Form
+            case 44:   //  GastroCloud.Views.Grupo.Personalizado.FormPortion
                 userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_44_Form;
+                userType.Activator = Activate_44_FormPortion;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 45:   //  GastroCloud.Views.Grupo.Personalizado.ItemDetailRecipeView
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_45_ItemDetailRecipeView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 46:   //  GastroCloud.Views.Grupo.Personalizado.SearchRecipeView
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_46_SearchRecipeView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 47:   //  GastroCloud.Views.Home.Home
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_47_Home;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 48:   //  GastroCloud.Views.Insumo.Form
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_48_Form;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 49:   //  GastroCloud.Views.Insumo.IndexInsumos
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_49_IndexInsumos;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 50:   //  GastroCloud.Views.Mesas.Form
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_50_Form;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 51:   //  GastroCloud.Views.Mesas.IndexMesas
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_51_IndexMesas;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 52:   //  GastroCloud.Views.Paquete.DetailsPaquete
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_52_DetailsPaquete;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 53:   //  GastroCloud.Views.Paquete.Form
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_53_Form;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 54:   //  GastroCloud.Views.Paquete.IndexPaquetes
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_54_IndexPaquetes;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 55:   //  GastroCloud.Views.Producto.DetailsProducto
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_55_DetailsProducto;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 56:   //  GastroCloud.Views.Producto.Form
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_56_Form;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 57:   //  GastroCloud.Views.Producto.IndexProductos
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_57_IndexProductos;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 58:   //  GastroCloud.Views.Promocion.DetailsPromocion
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_58_DetailsPromocion;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 59:   //  GastroCloud.Views.Promocion.Form
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_59_Form;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 60:   //  GastroCloud.Views.Promocion.IndexPromocion
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_60_IndexPromocion;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 61:   //  GastroCloud.Views.Proveedor.Form
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_61_Form;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 62:   //  GastroCloud.Views.Proveedor.IndexProveedor
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_62_IndexProveedor;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 63:   //  GastroCloud.Views.Puesto.DetailsPuestos
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_63_DetailsPuestos;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 64:   //  GastroCloud.Views.Puesto.Form
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_64_Form;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 65:   //  GastroCloud.Views.Puesto.IndexPuestos
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_65_IndexPuestos;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 66:   //  GastroCloud.Views.Receta.IndexReceta
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_66_IndexReceta;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 67:   //  GastroCloud.Views.UnidadMedida.Form
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_67_Form;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 68:   //  GastroCloud.Views.UnidadMedida.Index
+                userType = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_68_Index;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -590,6 +865,60 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
             return xamlType;
         }
 
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
+        {
+            get
+            {
+                if(_otherProviders == null)
+                {
+                    var otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
+                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::Callisto.Callisto_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
+                    _otherProviders = otherProviders;
+                }
+                return _otherProviders;
+            }
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(typeName);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(type);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
 
         private object get_0_OptionsViewModel_options(object instance)
         {
@@ -626,100 +955,130 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
             var that = (global::GastroCloud.GridResizable.Options)instance;
             that.ImagePath = (global::System.String)Value;
         }
-        private object get_4_Options_Description(object instance)
+        private object get_4_Options_Tag(object instance)
+        {
+            var that = (global::GastroCloud.GridResizable.Options)instance;
+            return that.Tag;
+        }
+        private void set_4_Options_Tag(object instance, object Value)
+        {
+            var that = (global::GastroCloud.GridResizable.Options)instance;
+            that.Tag = (global::System.String)Value;
+        }
+        private object get_5_Options_Description(object instance)
         {
             var that = (global::GastroCloud.GridResizable.Options)instance;
             return that.Description;
         }
-        private void set_4_Options_Description(object instance, object Value)
+        private void set_5_Options_Description(object instance, object Value)
         {
             var that = (global::GastroCloud.GridResizable.Options)instance;
             that.Description = (global::System.String)Value;
         }
-        private object get_5_Options_Width(object instance)
+        private object get_6_Options_Width(object instance)
         {
             var that = (global::GastroCloud.GridResizable.Options)instance;
             return that.Width;
         }
-        private void set_5_Options_Width(object instance, object Value)
+        private void set_6_Options_Width(object instance, object Value)
         {
             var that = (global::GastroCloud.GridResizable.Options)instance;
             that.Width = (global::System.Int32)Value;
         }
-        private object get_6_Options_Height(object instance)
+        private object get_7_Options_Height(object instance)
         {
             var that = (global::GastroCloud.GridResizable.Options)instance;
             return that.Height;
         }
-        private void set_6_Options_Height(object instance, object Value)
+        private void set_7_Options_Height(object instance, object Value)
         {
             var that = (global::GastroCloud.GridResizable.Options)instance;
             that.Height = (global::System.Int32)Value;
         }
-        private object get_7_Options_Image(object instance)
+        private object get_8_Options_Image(object instance)
         {
             var that = (global::GastroCloud.GridResizable.Options)instance;
             return that.Image;
         }
-        private object get_8_OptionsViewModel_SelectedOption(object instance)
+        private object get_9_OptionsViewModel_MaximumRowsOrColumns(object instance)
+        {
+            var that = (global::GastroCloud.GridResizable.OptionsViewModel)instance;
+            return that.MaximumRowsOrColumns;
+        }
+        private void set_9_OptionsViewModel_MaximumRowsOrColumns(object instance, object Value)
+        {
+            var that = (global::GastroCloud.GridResizable.OptionsViewModel)instance;
+            that.MaximumRowsOrColumns = (global::System.String)Value;
+        }
+        private object get_10_OptionsViewModel_itemSize(object instance)
+        {
+            var that = (global::GastroCloud.GridResizable.OptionsViewModel)instance;
+            return that.itemSize;
+        }
+        private void set_10_OptionsViewModel_itemSize(object instance, object Value)
+        {
+            var that = (global::GastroCloud.GridResizable.OptionsViewModel)instance;
+            that.itemSize = (global::System.Double)Value;
+        }
+        private object get_11_OptionsViewModel_SelectedOption(object instance)
         {
             var that = (global::GastroCloud.GridResizable.OptionsViewModel)instance;
             return that.SelectedOption;
         }
-        private void set_8_OptionsViewModel_SelectedOption(object instance, object Value)
+        private void set_11_OptionsViewModel_SelectedOption(object instance, object Value)
         {
             var that = (global::GastroCloud.GridResizable.OptionsViewModel)instance;
             that.SelectedOption = (global::GastroCloud.GridResizable.Options)Value;
         }
-        private object get_9_Interaction_Behaviors(object instance)
+        private object get_12_Interaction_Behaviors(object instance)
         {
             return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_9_Interaction_Behaviors(object instance, object Value)
+        private void set_12_Interaction_Behaviors(object instance, object Value)
         {
             global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
         }
-        private object get_10_Blur_Value(object instance)
+        private object get_13_Blur_Value(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur)instance;
             return that.Value;
         }
-        private void set_10_Blur_Value(object instance, object Value)
+        private void set_13_Blur_Value(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur)instance;
             that.Value = (global::System.Double)Value;
         }
-        private object get_11_CompositionBehaviorBase_AutomaticallyStart(object instance)
+        private object get_14_CompositionBehaviorBase_AutomaticallyStart(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase<global::Windows.UI.Xaml.FrameworkElement>)instance;
             return that.AutomaticallyStart;
         }
-        private void set_11_CompositionBehaviorBase_AutomaticallyStart(object instance, object Value)
+        private void set_14_CompositionBehaviorBase_AutomaticallyStart(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase<global::Windows.UI.Xaml.FrameworkElement>)instance;
             that.AutomaticallyStart = (global::System.Boolean)Value;
         }
-        private object get_12_CompositionBehaviorBase_Delay(object instance)
+        private object get_15_CompositionBehaviorBase_Delay(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase<global::Windows.UI.Xaml.FrameworkElement>)instance;
             return that.Delay;
         }
-        private void set_12_CompositionBehaviorBase_Delay(object instance, object Value)
+        private void set_15_CompositionBehaviorBase_Delay(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase<global::Windows.UI.Xaml.FrameworkElement>)instance;
             that.Delay = (global::System.Double)Value;
         }
-        private object get_13_CompositionBehaviorBase_Duration(object instance)
+        private object get_16_CompositionBehaviorBase_Duration(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase<global::Windows.UI.Xaml.FrameworkElement>)instance;
             return that.Duration;
         }
-        private void set_13_CompositionBehaviorBase_Duration(object instance, object Value)
+        private void set_16_CompositionBehaviorBase_Duration(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase<global::Windows.UI.Xaml.FrameworkElement>)instance;
             that.Duration = (global::System.Double)Value;
         }
-        private object get_14_Behavior_AssociatedObject(object instance)
+        private object get_17_Behavior_AssociatedObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactivity.Behavior<global::Windows.UI.Xaml.FrameworkElement>)instance;
             return that.AssociatedObject;
@@ -756,76 +1115,94 @@ namespace GastroCloud.GastroCloud_XamlTypeInfo
                 xamlMember.Getter = get_3_Options_ImagePath;
                 xamlMember.Setter = set_3_Options_ImagePath;
                 break;
+            case "GastroCloud.GridResizable.Options.Tag":
+                userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("GastroCloud.GridResizable.Options");
+                xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "Tag", "String");
+                xamlMember.Getter = get_4_Options_Tag;
+                xamlMember.Setter = set_4_Options_Tag;
+                break;
             case "GastroCloud.GridResizable.Options.Description":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("GastroCloud.GridResizable.Options");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "Description", "String");
-                xamlMember.Getter = get_4_Options_Description;
-                xamlMember.Setter = set_4_Options_Description;
+                xamlMember.Getter = get_5_Options_Description;
+                xamlMember.Setter = set_5_Options_Description;
                 break;
             case "GastroCloud.GridResizable.Options.Width":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("GastroCloud.GridResizable.Options");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "Width", "Int32");
-                xamlMember.Getter = get_5_Options_Width;
-                xamlMember.Setter = set_5_Options_Width;
+                xamlMember.Getter = get_6_Options_Width;
+                xamlMember.Setter = set_6_Options_Width;
                 break;
             case "GastroCloud.GridResizable.Options.Height":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("GastroCloud.GridResizable.Options");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "Height", "Int32");
-                xamlMember.Getter = get_6_Options_Height;
-                xamlMember.Setter = set_6_Options_Height;
+                xamlMember.Getter = get_7_Options_Height;
+                xamlMember.Setter = set_7_Options_Height;
                 break;
             case "GastroCloud.GridResizable.Options.Image":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("GastroCloud.GridResizable.Options");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "Image", "Windows.UI.Xaml.Media.ImageSource");
-                xamlMember.Getter = get_7_Options_Image;
+                xamlMember.Getter = get_8_Options_Image;
                 xamlMember.SetIsReadOnly();
+                break;
+            case "GastroCloud.GridResizable.OptionsViewModel.MaximumRowsOrColumns":
+                userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("GastroCloud.GridResizable.OptionsViewModel");
+                xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "MaximumRowsOrColumns", "String");
+                xamlMember.Getter = get_9_OptionsViewModel_MaximumRowsOrColumns;
+                xamlMember.Setter = set_9_OptionsViewModel_MaximumRowsOrColumns;
+                break;
+            case "GastroCloud.GridResizable.OptionsViewModel.itemSize":
+                userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("GastroCloud.GridResizable.OptionsViewModel");
+                xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "itemSize", "Double");
+                xamlMember.Getter = get_10_OptionsViewModel_itemSize;
+                xamlMember.Setter = set_10_OptionsViewModel_itemSize;
                 break;
             case "GastroCloud.GridResizable.OptionsViewModel.SelectedOption":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("GastroCloud.GridResizable.OptionsViewModel");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "SelectedOption", "GastroCloud.GridResizable.Options");
-                xamlMember.Getter = get_8_OptionsViewModel_SelectedOption;
-                xamlMember.Setter = set_8_OptionsViewModel_SelectedOption;
+                xamlMember.Getter = get_11_OptionsViewModel_SelectedOption;
+                xamlMember.Setter = set_11_OptionsViewModel_SelectedOption;
                 break;
             case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_9_Interaction_Behaviors;
-                xamlMember.Setter = set_9_Interaction_Behaviors;
+                xamlMember.Getter = get_12_Interaction_Behaviors;
+                xamlMember.Setter = set_12_Interaction_Behaviors;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur.Value":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "Value", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_Blur_Value;
-                xamlMember.Setter = set_10_Blur_Value;
+                xamlMember.Getter = get_13_Blur_Value;
+                xamlMember.Setter = set_13_Blur_Value;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>.AutomaticallyStart":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "AutomaticallyStart", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_CompositionBehaviorBase_AutomaticallyStart;
-                xamlMember.Setter = set_11_CompositionBehaviorBase_AutomaticallyStart;
+                xamlMember.Getter = get_14_CompositionBehaviorBase_AutomaticallyStart;
+                xamlMember.Setter = set_14_CompositionBehaviorBase_AutomaticallyStart;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>.Delay":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "Delay", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_CompositionBehaviorBase_Delay;
-                xamlMember.Setter = set_12_CompositionBehaviorBase_Delay;
+                xamlMember.Getter = get_15_CompositionBehaviorBase_Delay;
+                xamlMember.Setter = set_15_CompositionBehaviorBase_Delay;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>.Duration":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.CompositionBehaviorBase`1<Windows.UI.Xaml.FrameworkElement>");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "Duration", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_13_CompositionBehaviorBase_Duration;
-                xamlMember.Setter = set_13_CompositionBehaviorBase_Duration;
+                xamlMember.Getter = get_16_CompositionBehaviorBase_Duration;
+                xamlMember.Setter = set_16_CompositionBehaviorBase_Duration;
                 break;
             case "Microsoft.Xaml.Interactivity.Behavior`1<Windows.UI.Xaml.FrameworkElement>.AssociatedObject":
                 userType = (global::GastroCloud.GastroCloud_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior`1<Windows.UI.Xaml.FrameworkElement>");
                 xamlMember = new global::GastroCloud.GastroCloud_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.FrameworkElement");
-                xamlMember.Getter = get_14_Behavior_AssociatedObject;
+                xamlMember.Getter = get_17_Behavior_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
             }

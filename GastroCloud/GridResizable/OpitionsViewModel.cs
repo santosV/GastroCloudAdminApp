@@ -10,6 +10,8 @@ namespace GastroCloud.GridResizable
     {
         static List<Options> results = new List<Options>();
         static String number = "1";
+        static double itemsize = 0.0;
+
         public List<Options> options
         {
             get
@@ -26,6 +28,26 @@ namespace GastroCloud.GridResizable
             }
 
             set { }
+        }
+
+        public double itemSize
+        {
+            get
+            {
+                return itemsize;
+            }
+
+            set { }
+        }
+
+        public void setMaximumRowsOrColums(String Number)
+        {
+            number = Number;
+        }
+
+        public void setItemSize(double Size)
+        {
+            itemsize = Size;
         }
 
         private Options selectedOption;

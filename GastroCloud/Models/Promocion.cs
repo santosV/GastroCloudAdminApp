@@ -24,11 +24,11 @@ namespace GastroCloud.Models
         {
             List<Promocion> desc = new List<Promocion>();
 
-            desc.Add(new Promocion { id = 1, imagen = ReadImageFile(), nombre = "3x2", fechaInicio = DateTime.Today, fechaFin = DateTime.Today, horaInicio = DateTime.Now.TimeOfDay, horaFin = DateTime.Now.TimeOfDay, precio = 90.00, iva = 12.00, diasDisponibles = "L;M;V" });
-            desc.Add(new Promocion { id = 2, imagen = ReadImageFile(), nombre = "3x2", fechaInicio = DateTime.Today, fechaFin = DateTime.Today, horaInicio = DateTime.Now.TimeOfDay, horaFin = DateTime.Now.TimeOfDay, precio = 90.00, iva = 12.00, diasDisponibles = "L;M;V" });
-            desc.Add(new Promocion { id = 3, imagen = ReadImageFile(), nombre = "3x2", fechaInicio = DateTime.Today, fechaFin = DateTime.Today, horaInicio = DateTime.Now.TimeOfDay, horaFin = DateTime.Now.TimeOfDay, precio = 90.00, iva = 12.00, diasDisponibles = "L;M;V" });
-            desc.Add(new Promocion { id = 4, imagen = ReadImageFile(), nombre = "3x2", fechaInicio = DateTime.Today, fechaFin = DateTime.Today, horaInicio = DateTime.Now.TimeOfDay, horaFin = DateTime.Now.TimeOfDay, precio = 90.00, iva = 12.00, diasDisponibles = "L;M;V" });
-            desc.Add(new Promocion { id = 5, imagen = ReadImageFile(), nombre = "3x2", fechaInicio = DateTime.Today, fechaFin = DateTime.Today, horaInicio = DateTime.Now.TimeOfDay, horaFin = DateTime.Now.TimeOfDay, precio = 90.00, iva = 12.00, diasDisponibles = "L;M;V" });
+            desc.Add(new Promocion { id = 1,  nombre = "3x2", fechaInicio = DateTime.Today, fechaFin = DateTime.Today, horaInicio = DateTime.Now.TimeOfDay, horaFin = DateTime.Now.TimeOfDay, precio = 90.00, iva = 12.00, diasDisponibles = "L;M;V" });
+            desc.Add(new Promocion { id = 2,  nombre = "3x2", fechaInicio = DateTime.Today, fechaFin = DateTime.Today, horaInicio = DateTime.Now.TimeOfDay, horaFin = DateTime.Now.TimeOfDay, precio = 90.00, iva = 12.00, diasDisponibles = "L;M;V" });
+            desc.Add(new Promocion { id = 3,  nombre = "3x2", fechaInicio = DateTime.Today, fechaFin = DateTime.Today, horaInicio = DateTime.Now.TimeOfDay, horaFin = DateTime.Now.TimeOfDay, precio = 90.00, iva = 12.00, diasDisponibles = "L;M;V" });
+            desc.Add(new Promocion { id = 4,  nombre = "3x2", fechaInicio = DateTime.Today, fechaFin = DateTime.Today, horaInicio = DateTime.Now.TimeOfDay, horaFin = DateTime.Now.TimeOfDay, precio = 90.00, iva = 12.00, diasDisponibles = "L;M;V" });
+            desc.Add(new Promocion { id = 5,  nombre = "3x2", fechaInicio = DateTime.Today, fechaFin = DateTime.Today, horaInicio = DateTime.Now.TimeOfDay, horaFin = DateTime.Now.TimeOfDay, precio = 90.00, iva = 12.00, diasDisponibles = "L;M;V" });
 
             return desc;
         }

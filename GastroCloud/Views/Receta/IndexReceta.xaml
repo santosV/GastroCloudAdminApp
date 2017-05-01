@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="GastroCloud.Views.Receta.IndexReceta"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GastroCloud.Views.Receta"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--Recursos-->
+    <Page.Resources>
+
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <CollectionViewSource
+            x:Name="itemsViewSource"
+            Source="{Binding index}"/>
+
+        </ResourceDictionary>
+    </Page.Resources>
+    <!--Terminan Recursos-->
+
+
+    <Grid Background="{StaticResource FocusVisualWhiteStrokeThemeBrush}" MaxWidth="900">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        
+        <StackPanel Grid.Row="0" Background="{ThemeResource InkToolbarAccentColorThemeBrush}"  Orientation="Horizontal">
+            <Button Style="{StaticResource NavigationBackButtonSmallStyle}" Foreground="{ThemeResource FocusVisualWhiteStrokeThemeBrush}"></Button>
+            <TextBlock FontSize="20" Foreground="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" Name="title" Margin="10,0,0,0">Receta</TextBlock>
+        </StackPanel>
+        <RadioButton Grid.Row="1"  x:Name="btnCrear" HorizontalAlignment="Right" Content="Agregar Ingrediente" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,20,26" />
+
+        <ScrollViewer Grid.Row="2" VerticalScrollMode="Auto">
+            <GridView
+            x:Name="gridIngredientes"
+            AutomationProperties.AutomationId="ItemGridView"
+            AutomationProperties.Name="Items In Group"
+            TabIndex="1"
+            Grid.RowSpan="2"
+            Padding="0"
+            SelectionMode="Single"
+            IsSwipeEnabled="True" Background="{StaticResource FocusVisualWhiteStrokeThemeBrush}">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="110" Grid.Row="1" Width="268" Tag="{Binding id}" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock   Margin="0,10,0,0" FontFamily="Segoe MDL2 Assets"  Visibility="Visible" Foreground="{StaticResource InkToolbarAccentColorThemeBrush}" Text="" FontSize="80"/>
+                            <Image  Stretch="UniformToFill" Width="100" Height="100" AutomationProperties.Name="{Binding Title}" Visibility="Collapsed" Source="ms-appx:///Assets/images.jpg" />
+
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10,-15,0,0">
+                                <TextBlock Text="{Binding cantidad}" Foreground="{StaticResource InkToolbarAccentColorThemeBrush}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding tipo}" FontSize="12" Foreground="#555" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding extraId}" FontSize="12" Foreground="#555" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </ScrollViewer>
+            
+
+       
+
+    </Grid>
+</Page>

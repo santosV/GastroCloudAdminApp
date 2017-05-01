@@ -1,0 +1,171 @@
+﻿<Page
+    x:Class="GastroCloud.Views.Promocion.DetailsPromocion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GastroCloud.Views.Producto"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--Recursos-->
+    <Page.Resources>
+
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+
+
+        </ResourceDictionary>
+    </Page.Resources>
+    <!--Terminan Recursos-->
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup"/>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                        <AdaptiveTrigger MinWindowWidth="640"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        
+                        
+                        <Setter Target="presentationContent.(Grid.Row)" Value="0"/>
+                        <Setter Target="presentationContent.(Grid.Column)" Value="1"/>
+                        <Setter Target="presentationContent.Margin" Value="20,0,0,0"/>
+                        <Setter Target="row2.Height" Value="0"/>
+                        <Setter Target="row1.Height" Value="*"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
+
+       
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition x:Name="columna2"  Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Name="row1" Height="auto"/>
+                    <RowDefinition x:Name="row2" Height="auto"/>
+                </Grid.RowDefinitions>
+
+
+
+                
+                    <!--Almacenes-->
+                <StackPanel x:Name="formPanel" HorizontalAlignment="Stretch"  >
+                    <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" FontFamily="Segoe MDL2 Assets"  Visibility="Visible" Foreground="{StaticResource InkToolbarAccentColorThemeBrush}" Text="" FontSize="100"/>
+                    <Image  Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}" Visibility="Collapsed" Source="ms-appx:///Assets/images.jpg" />
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <RadioButton Grid.Row="0"  Content="Guardar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
+                            <RadioButton Grid.Row="0"  x:Name="btnC"  Content="Cancelar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
+                            <RadioButton Grid.Row="0"  x:Name="btnCar" Content="Eliminar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
+                        </StackPanel>
+
+                        
+                            <StackPanel Orientation="Vertical">
+                                <!--Cuadro para imagen-->
+
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
+                                    <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
+                                        <TextBox x:Name="txtNombre" Background="Transparent" PlaceholderText="Nombre"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
+                                    <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
+                                        <TextBox x:Name="txtPrecio" Background="Transparent" PlaceholderText="Precio"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel Name="extraIva" Margin="0,0,0,10">
+                                    <CheckBox Name="chkExtraIVA"  Foreground="#FF9B9B9B" IsChecked="False">IVA Incluido</CheckBox>
+                                </StackPanel>
+
+                                <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,10"/>
+                                <StackPanel Name="fecha" Orientation="Vertical"  HorizontalAlignment="Stretch" Margin="0,0,0,10">
+                                    <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
+                                        <TextBlock Name="de" Text= "De:"  Margin="0,0,10,0" VerticalAlignment="Center" ></TextBlock>
+                                        <CalendarDatePicker Width="240" Name="dateDe"  
+                    DateFormat = "{}{dayofweek.full}‎, ‎{month.full}‎ ‎{day.integer}‎, ‎{year.full}"/>
+                                    </StackPanel>
+                                    <StackPanel  Orientation="Horizontal">
+                                        <TextBlock Name="a"  Text= "A:" Margin="0,0,10,0" VerticalAlignment="Center" ></TextBlock>
+                                        <CalendarDatePicker Width="240" Margin="9,0,0,0" x:Name="dateA" DateFormat = "{}{dayofweek.full}‎, ‎{month.full}‎ ‎{day.integer}‎, ‎{year.full}"/>
+                                    </StackPanel>
+
+                                </StackPanel>
+                                <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,10"/>
+                                <StackPanel Name="hora" Margin="0,0,0,10" Orientation="Vertical">
+                                    <StackPanel Margin="0,0,0,10" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                        <TextBlock Margin="0,0,10,0" Text="De: " VerticalAlignment="Center"></TextBlock>
+                                        <TimePicker/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Margin="0,0,18,0" Text="A: " VerticalAlignment="Center"></TextBlock>
+                                        <TimePicker/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,10"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <StackPanel>
+                                        <CheckBox  Foreground="#FF9B9B9B" IsChecked="False">Todos</CheckBox>
+                                        <CheckBox  Foreground="#FF9B9B9B" IsChecked="False">Lunes</CheckBox>
+                                        <CheckBox  Foreground="#FF9B9B9B" IsChecked="False">Martes</CheckBox>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox  Foreground="#FF9B9B9B" IsChecked="False">Miercoles</CheckBox>
+                                        <CheckBox  Foreground="#FF9B9B9B" IsChecked="False">Jueves</CheckBox>
+                                        <CheckBox  Foreground="#FF9B9B9B" IsChecked="False">Viernes</CheckBox>
+
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox  Foreground="#FF9B9B9B" IsChecked="False">Sabado</CheckBox>
+                                        <CheckBox  Foreground="#FF9B9B9B" IsChecked="False">Domingo</CheckBox>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,10"/>
+                                <StackPanel   Name="grupo" Margin="0,0,0,10">
+                                    <ComboBox x:Name="comboGrupo" HorizontalAlignment="Stretch">
+                                        <ComboBoxItem IsSelected="True">Grupo</ComboBoxItem>
+                                    </ComboBox>
+                                </StackPanel>
+                                <StackPanel Name="Imagen" Margin="0,0,0,10" Orientation="Horizontal" Visibility="Visible">
+                                    <Image Name="Image" Width="50" Height="50" Margin="0,0,20,0" Source="ms-appx:///Assets/images.jpg"></Image>
+                                    <Button Content="cargar imagen" Background="{StaticResource InkToolbarAccentColorThemeBrush}" Foreground="{StaticResource InkToolbarButtonBackgroundThemeBrush}" Style="{StaticResource FormButtons}"></Button>
+
+                                </StackPanel>
+
+                            </StackPanel>
+
+                       
+                        
+                    </StackPanel>
+                </StackPanel>
+              
+
+
+
+                <Grid Name="presentationContent" Grid.Column="0" Grid.Row="1">
+                    <Frame x:Name="receta"/>
+                </Grid>
+
+            </Grid>
+
+            <!--</ScrollViewer>-->
+       
+
+
+    </Grid>
+
+
+</Page>

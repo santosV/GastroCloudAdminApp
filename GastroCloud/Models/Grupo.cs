@@ -19,11 +19,11 @@ namespace GastroCloud.Models
         {
             List<Grupo> desc = new List<Grupo>();
 
-            desc.Add(new Grupo { id = 1, imagen = ReadImageFile(), nombre = "Hamburguesa", custom = false, tipoId = 2 });
-            desc.Add(new Grupo { id = 2, imagen = ReadImageFile(), nombre = "Hamburguesa", custom = false, tipoId = 2 });
-            desc.Add(new Grupo { id = 3, imagen = ReadImageFile(), nombre = "Hamburguesa", custom = false, tipoId = 2 });
-            desc.Add(new Grupo { id = 4, imagen = ReadImageFile(), nombre = "Hamburguesa", custom = false, tipoId = 2 });
-            desc.Add(new Grupo { id = 5, imagen = ReadImageFile(), nombre = "Hamburguesa", custom = false, tipoId = 2 });
+            desc.Add(new Grupo { id = 1,  nombre = "Hamburguesa", custom = false, tipoId = 2 });
+            desc.Add(new Grupo { id = 2,  nombre = "Hamburguesa", custom = false, tipoId = 2 });
+            desc.Add(new Grupo { id = 3,  nombre = "Hamburguesa", custom = false, tipoId = 2 });
+            desc.Add(new Grupo { id = 4,  nombre = "Hamburguesa", custom = false, tipoId = 2 });
+            desc.Add(new Grupo { id = 5,  nombre = "Hamburguesa", custom = false, tipoId = 2 });
 
             return desc;
         }

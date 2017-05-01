@@ -28,13 +28,17 @@
     <AppXManifest Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-12T00:24:38.000</Modified>
+      <Modified>2017-04-29T21:22:57.011</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\GastroCloud.exe">
       <PackagePath>entrypoint\GastroCloud.exe</PackagePath>
-      <Modified>2017-04-12T00:24:35.260</Modified>
+      <Modified>2017-04-29T21:19:05.916</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\.nuget\packages\Callisto\1.4.0\lib\netcore451\Callisto.dll">
+      <PackagePath>Callisto.dll</PackagePath>
+      <Modified>2013-10-24T18:21:02.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -480,6 +484,10 @@
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
       <Modified>2016-08-09T15:14:36.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\58369-200.png">
+      <PackagePath>Assets\58369-200.png</PackagePath>
+      <Modified>2017-04-27T17:58:42.692</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\add picture.png">
       <PackagePath>Assets\add picture.png</PackagePath>
       <Modified>2017-04-06T19:59:47.740</Modified>
@@ -526,6 +534,14 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-21T00:30:08.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\backgorund.jpg">
+      <PackagePath>Assets\backgorund.jpg</PackagePath>
+      <Modified>2017-04-26T21:30:55.443</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\discount-coupon-management.jpg">
+      <PackagePath>Assets\discount-coupon-management.jpg</PackagePath>
+      <Modified>2017-04-26T17:39:53.847</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\images.jpg">
       <PackagePath>Assets\images.jpg</PackagePath>
       <Modified>2017-04-07T21:09:36.107</Modified>
@@ -544,20 +560,24 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\GastroCloud.xr.xml">
       <PackagePath>GastroCloud.xr.xml</PackagePath>
-      <Modified>2017-04-12T00:17:16.379</Modified>
+      <Modified>2017-04-29T21:09:09.272</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-04-05T21:54:11.500</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\.nuget\packages\Callisto\1.4.0\lib\netcore451\Callisto\themes\Generic.xbf">
+      <PackagePath>Callisto\themes\Generic.xbf</PackagePath>
+      <Modified>2013-10-24T18:21:02.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-12T00:24:36.650</Modified>
+      <Modified>2017-04-29T21:22:55.880</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Core\GastroCloud.exe">
       <PackagePath>GastroCloud.exe</PackagePath>
-      <Modified>2017-04-12T00:24:37.968</Modified>
+      <Modified>2017-04-29T21:22:56.981</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

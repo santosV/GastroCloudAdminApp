@@ -1,5 +1,6 @@
 ﻿{
   "dependencies": {
+    "Callisto": "1.4.0",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
     "Microsoft.Toolkit.Uwp.UI.Animations": "1.4.1"
   },

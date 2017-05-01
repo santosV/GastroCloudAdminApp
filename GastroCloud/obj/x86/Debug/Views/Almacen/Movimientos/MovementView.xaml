@@ -1,0 +1,332 @@
+﻿<Page
+    x:Class="GastroCloud.Views.Almacen.Movimientos.MovementView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GastroCloud.Views.Almacen.Movimientos"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--Recursos-->
+    <Page.Resources>
+
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <CollectionViewSource x:ConnectionId='1'
+            x:Name="itemsViewSource"
+            Source="{Binding index}"/>
+
+        </ResourceDictionary>
+    </Page.Resources>
+    <!--Terminan Recursos-->
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='2' x:Name="VisualStateGroup"/>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="guardar.HorizontalAlignment" Value="Right"/>
+                        <Setter Target="cancelar.HorizontalAlignment" Value="Left"/>
+                        <Setter Target="eliminar.Width" Value="612"/>
+                        <Setter Target="guardar.Width" Value="300"/>
+                        <Setter Target="cancelar.Width" Value="300"/>
+                        <Setter Target="eliminar.Margin" Value="-8,0,0,0"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <!--Contenido-->
+        <FlipView x:ConnectionId='3' Name="mainContent"                                              Grid.Row="0" Background="{ThemeResource FocusVisualWhiteStrokeThemeBrush}">
+            <FlipViewItem x:ConnectionId='10' Name="salidaView">
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--Buscador-->
+                    <StackPanel Grid.Row="0"  Orientation="Vertical" HorizontalAlignment="Stretch" >
+                        <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="10,-3,0,0" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center"  Visibility="Visible" Foreground="#FFDEDEDE" Text="" FontWeight="ExtraBold" FontSize="15"/>
+                                <TextBox x:ConnectionId='19'  Grid.Column="1" x:Name="txtBuscadorAS" Background="Transparent" PlaceholderText="Buscar almacén de salida" Margin="0,5,0,0"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+
+                            </Grid>
+                        </Border>
+                        <Border Margin="0,10,0,0" Grid.Row="1"  HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+                    </StackPanel>
+
+                    <!--Lista-->
+                    <ScrollViewer Grid.Row="1">
+                        <GridView x:ConnectionId='18'
+                        x:Name="gridAlmacenS"
+                        AutomationProperties.AutomationId="ItemGridView"
+                        AutomationProperties.Name="Items In Group"
+                        TabIndex="1"
+                        Grid.RowSpan="2"
+                        Grid.Row="1"
+                        Padding="0,10,0,0"
+                        SelectionMode="Multiple"
+                        IsSwipeEnabled="True" Background="{StaticResource FocusVisualWhiteStrokeThemeBrush}">
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Height="140" Tag="{Binding id}" Padding="0" >
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Border HorizontalAlignment="Stretch" CornerRadius="100"  BorderThickness="3" BorderBrush="{ThemeResource InkToolbarAccentColorThemeBrush}" Margin="0">
+                                                <Grid VerticalAlignment="Center">
+
+                                                    <Ellipse  Height="105" Width="105" Margin="0"  VerticalAlignment="Center">
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush x:Name="imgAlmacen"  Stretch="UniformToFill" ImageSource="https://source.unsplash.com/collection/781608" />
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+                                                    <Ellipse Height="105" Width="105" VerticalAlignment="Center" Fill="Black" Opacity="0.4"/>
+                                                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="" FontSize="36"  Foreground="White" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+                                                </Grid>
+                                            </Border>
+
+                                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="15,0,0,0">
+                                                <TextBlock Text="{Binding nombre}" Foreground="{StaticResource InkToolbarAccentColorThemeBrush}" FontFamily="Segoe UI" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"/>
+                                                <TextBlock FontFamily="Segoe UI" FontWeight="ExtraLight" FontSize="15" Foreground="Gray" Text="Último movimiento: 17/Marzo/2017"/>
+                                            </StackPanel>
+                                        </Grid>
+
+                                        <Border Margin="0,3,0,0" Grid.Row="1" Width="400" HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+                    </ScrollViewer>
+                </Grid>
+            </FlipViewItem>
+            <FlipViewItem x:ConnectionId='11' Name="entradaView">
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--Buscador-->
+                    <StackPanel Grid.Row="0"  Orientation="Vertical" HorizontalAlignment="Stretch" >
+                        <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="10,-3,0,0" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center"  Visibility="Visible" Foreground="#FFDEDEDE" Text="" FontWeight="ExtraBold" FontSize="15"/>
+                                <TextBox x:ConnectionId='17'   Grid.Column="1" x:Name="txtBuscadorAE" Background="Transparent" PlaceholderText="Buscar almacén de entrada" Margin="0,5,0,0"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+
+                            </Grid>
+                        </Border>
+                        <Border Margin="0,10,0,0" Grid.Row="1"  HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+                    </StackPanel>
+
+                    <!--Lista-->
+                    <ScrollViewer Grid.Row="1">
+                        <GridView x:ConnectionId='16'
+                        x:Name="gridAlmacenE"
+                        AutomationProperties.AutomationId="ItemGridView"
+                        AutomationProperties.Name="Items In Group"
+                        TabIndex="1"
+                        Grid.RowSpan="2"
+                        Grid.Row="1"
+                        Padding="0,10,0,0"
+                        SelectionMode="Multiple"
+                        IsSwipeEnabled="True" Background="{StaticResource FocusVisualWhiteStrokeThemeBrush}">
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Height="140" Tag="{Binding id}" Padding="0" >
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Border HorizontalAlignment="Stretch" CornerRadius="100"  BorderThickness="3" BorderBrush="{ThemeResource InkToolbarAccentColorThemeBrush}" Margin="0">
+                                                <Grid VerticalAlignment="Center">
+
+                                                    <Ellipse  Height="105" Width="105" Margin="0"  VerticalAlignment="Center">
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush x:Name="imgAlmacen"  Stretch="UniformToFill" ImageSource="https://source.unsplash.com/collection/781608" />
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+                                                    <Ellipse Height="105" Width="105" VerticalAlignment="Center" Fill="Black" Opacity="0.4"/>
+                                                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="" FontSize="36"  Foreground="White" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+                                                </Grid>
+                                            </Border>
+
+                                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="15,0,0,0">
+                                                <TextBlock Text="{Binding nombre}" Foreground="{StaticResource InkToolbarAccentColorThemeBrush}" FontFamily="Segoe UI" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"/>
+                                                <TextBlock FontFamily="Segoe UI" FontWeight="ExtraLight" FontSize="15" Foreground="Gray" Text="Último movimiento: 17/Marzo/2017"/>
+                                            </StackPanel>
+                                        </Grid>
+
+                                        <Border Margin="0,3,0,0" Grid.Row="1" Width="400" HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+                    </ScrollViewer>
+                </Grid>
+            </FlipViewItem>
+            <FlipViewItem x:ConnectionId='12' Name="presentationView">
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--Buscador-->
+                    <StackPanel Grid.Row="0"  Orientation="Vertical" HorizontalAlignment="Stretch" >
+                        <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="10,-3,0,0" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center"  Visibility="Visible" Foreground="#FFDEDEDE" Text="" FontWeight="ExtraBold" FontSize="15"/>
+                                <TextBox x:ConnectionId='15'   Grid.Column="1" x:Name="txtBuscadorP" Background="Transparent" PlaceholderText="Buscar presentación" Margin="0,5,0,0"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+
+                            </Grid>
+                        </Border>
+                        <Border Margin="0,10,0,0" Grid.Row="1"  HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+                    </StackPanel>
+
+                    <!--Lista-->
+                    <ScrollViewer Grid.Row="1">
+                        <GridView x:ConnectionId='13'
+            x:Name="gridInsumos"
+            AutomationProperties.AutomationId="ItemGridView"
+            AutomationProperties.Name="Items In Group"
+            TabIndex="1"
+            Grid.RowSpan="2"
+            Grid.Row="2"
+            Padding="0,10,0,0"
+            SelectionMode="None"
+            IsSwipeEnabled="false" Background="{StaticResource FocusVisualWhiteStrokeThemeBrush}">
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid x:ConnectionId='14' Height="140" Tag="{Binding id}"                                           
+                          Padding="0" >
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Border HorizontalAlignment="Stretch" CornerRadius="100"  BorderThickness="3" BorderBrush="{ThemeResource InkToolbarAccentColorThemeBrush}" Margin="0">
+                                                <Grid VerticalAlignment="Center">
+
+                                                    <Ellipse  Height="105" Width="105" Margin="0"  VerticalAlignment="Center">
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush x:Name="imgAlmacen"  Stretch="UniformToFill" ImageSource="https://source.unsplash.com/collection/778920" />
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+                                                    <Ellipse Height="105" Width="105" VerticalAlignment="Center" Fill="Black" Opacity="0.4"/>
+                                                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="" FontSize="36"  Foreground="White" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+                                                </Grid>
+                                            </Border>
+
+                                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="15,0,0,0">
+                                                <TextBlock Text="{Binding descripcion}" Foreground="{StaticResource InkToolbarAccentColorThemeBrush}" FontFamily="Segoe UI" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"/>
+                                                <TextBlock FontFamily="Segoe UI" FontWeight="ExtraLight" FontSize="15" Foreground="Gray" Text="{Binding costo}"/>
+                                                <TextBlock FontFamily="Segoe UI" FontWeight="ExtraLight" FontSize="15" Foreground="Gray" Text="{Binding grupoId}"/>
+                                            </StackPanel>
+                                        </Grid>
+
+                                        <Border Margin="0,3,0,0" Grid.Row="1" Width="400" HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+
+
+                                    </Grid>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+                    </ScrollViewer>
+                </Grid>
+            </FlipViewItem>
+        </FlipView>
+
+
+        <!--Tabs-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Margin="0,0,0,0"   HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+            <StackPanel  Grid.Row="1" Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Grid x:ConnectionId='4' Name="salidaTab" Margin="10,0,10,0"                                           Tag="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="20"  FontFamily="Segoe MDL2 Assets" Text="" Foreground="Gray"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontWeight="ExtraLight" Text="Almacén de Salida" FontSize="10"  Foreground="Gray"/>
+                    <Rectangle x:ConnectionId='9' Grid.Row="2" Tag="0" Name="outputIndicator"  HorizontalAlignment="Stretch" Visibility="Visible" Height="5"  Fill="{ThemeResource InkToolbarAccentColorThemeBrush}"></Rectangle>
+                </Grid>
+                <Grid x:ConnectionId='5' Name="entradaTab" Margin="10,0,10,0"                                           Tag="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="20"  FontFamily="Segoe MDL2 Assets" Text="" Foreground="Gray"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontWeight="ExtraLight" Text="Alamcén de Entrada" FontSize="10"  Foreground="Gray"/>
+                    <Rectangle x:ConnectionId='8' Grid.Row="2"  Name="inputIndicator"   HorizontalAlignment="Stretch" Visibility="Collapsed" Height="5"  Fill="{ThemeResource InkToolbarAccentColorThemeBrush}"></Rectangle>
+                </Grid>
+                <Grid x:ConnectionId='6' Name="presentacionTab" Margin="10,0,10,0"                                           Tag="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="20"  FontFamily="Segoe MDL2 Assets" Text="" Foreground="Gray"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontWeight="ExtraLight" Text="Presentación" FontSize="10"  Foreground="Gray"/>
+                    <Rectangle x:ConnectionId='7' Grid.Row="2"  Name="presentationIndicator"   HorizontalAlignment="Stretch" Visibility="Collapsed" Height="5"  Fill="{ThemeResource InkToolbarAccentColorThemeBrush}"></Rectangle>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
+

@@ -54,13 +54,86 @@ namespace GastroCloud.Layout
                 default:
                     break;
             }
-            
-                
-            
-            
+
+            //option.setItemSize(calculateItemSize());
+            //option.setMaximumRowsOrColums("1");
 
 
 
+
+        }
+
+        //private double calculateItemSize()
+        //{
+        //    //double result=((Helpers.Global.width+Helpers.Global.height)*150)/1800;
+        //    //return result;
+        //}
+
+        private void Grid_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            Grid gridOptions = sender as Grid;
+            String option = gridOptions.Tag.ToString();
+            switch (option)
+            {
+                case "GrupoMesa":
+                    this.Frame.Navigate(typeof(Views.Grupo.IndexGrupo));
+                    break;
+                case "GrupoInsumo":
+                    this.Frame.Navigate(typeof(Views.Grupo.IndexGrupo));
+                    break;
+                case "GrupoPromocion":
+                    this.Frame.Navigate(typeof(Views.Grupo.IndexGrupo));
+                    break;
+                case "GrupoICompuesto":
+                    this.Frame.Navigate(typeof(Views.Grupo.IndexGrupo));
+                    break;
+                case "GrupoProducto":
+                    this.Frame.Navigate(typeof(Views.Grupo.IndexGrupo));
+                    break;
+                case "GrupoPaquete":
+                    this.Frame.Navigate(typeof(Views.Grupo.IndexGrupo));
+                    break;
+                case "GrupoPPersonalizado":
+                    this.Frame.Navigate(typeof(Views.Grupo.Personalizado.CustomGroup));
+                    break;
+                case "Almacen":
+                    this.Frame.Navigate(typeof(Views.Almacen.IndexAlmacen));
+                    break;
+                case "Entrada":
+                    this.Frame.Navigate(typeof(Views.Almacen.Movimientos.MovementView),1);
+                    break;
+                case "Salida":
+                    this.Frame.Navigate(typeof(Views.Almacen.Movimientos.MovementView),0);
+                    break;
+                case "Traspaso":
+                    this.Frame.Navigate(typeof(Views.Almacen.Movimientos.MovementView),2);
+                    break;
+                case "Promocion":
+                    this.Frame.Navigate(typeof(Views.Promocion.IndexPromocion));
+                    break;
+                case "Paquete":
+                    this.Frame.Navigate(typeof(Views.Paquete.IndexPaquetes));
+                    break;
+                case "Producto":
+                    this.Frame.Navigate(typeof(Views.Producto.IndexProductos));
+                    break;
+                case "Insumo":
+                    this.Frame.Navigate(typeof(Views.Insumo.IndexInsumos));
+                    break;
+                case "ICompuesto":
+                    this.Frame.Navigate(typeof(Views.Insumo.IndexInsumos));
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
+        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            //Helpers.Global.width = e.NewSize.Width;
+            //Helpers.Global.height = e.NewSize.Height;
         }
     }
 }

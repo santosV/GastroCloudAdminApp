@@ -1,0 +1,141 @@
+﻿<Page
+    x:Class="GastroCloud.Views.Paquete.DetailsPaquete"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GastroCloud.Views.Paquete"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--Recursos-->
+    <Page.Resources>
+
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+
+
+        </ResourceDictionary>
+    </Page.Resources>
+    <!--Terminan Recursos-->
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='1' x:Name="VisualStateGroup"/>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                        <AdaptiveTrigger MinWindowWidth="640"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="formContainer.VerticalScrollMode" Value="Enabled"/>
+                        <Setter Target="formContainer.VerticalScrollBarVisibility" Value="Hidden"/>
+
+                        <Setter Target="presentationContent.(Grid.Row)" Value="0"/>
+                        <Setter Target="presentationContent.(Grid.Column)" Value="1"/>
+                        <Setter Target="presentationContent.Margin" Value="20,0,0,0"/>
+                        <Setter Target="row2.Height" Value="0"/>
+                        <Setter Target="row1.Height" Value="*"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
+
+        <ScrollViewer x:ConnectionId='2' Name="formContainer"  Grid.Column="0" Grid.Row="0" VerticalScrollMode="Enabled">
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition x:ConnectionId='3' x:Name="columna2"  Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition x:ConnectionId='4' x:Name="row1" Height="auto"/>
+                    <RowDefinition x:ConnectionId='5' x:Name="row2" Height="auto"/>
+                </Grid.RowDefinitions>
+
+
+
+                <ScrollViewer VerticalScrollMode="Enabled">
+                    <!--Almacenes-->
+                    <StackPanel x:ConnectionId='8' x:Name="formPanel" HorizontalAlignment="Stretch"  >
+                        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" FontFamily="Segoe MDL2 Assets"  Visibility="Visible" Foreground="{StaticResource InkToolbarAccentColorThemeBrush}" Text="" FontSize="100"/>
+                        <Image  Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}" Visibility="Collapsed" Source="ms-appx:///Assets/images.jpg" />
+
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <RadioButton Grid.Row="0"  Content="Guardar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
+                                <RadioButton x:ConnectionId='18' Grid.Row="0"  x:Name="btnC"  Content="Cancelar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
+                                <RadioButton x:ConnectionId='19' Grid.Row="0"  x:Name="btnCar" Content="Eliminar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
+                            </StackPanel>
+
+
+                            <StackPanel MaxHeight="500">
+                                <!--Cuadro para imagen-->
+
+                                <!--Formulario-->
+                                <StackPanel Grid.Row="1" Orientation="Vertical">
+                                    <!--Cuadro para imagen-->
+
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
+                                        <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
+                                            <TextBox x:ConnectionId='17' x:Name="txtNombre" Background="Transparent" PlaceholderText="Nombre"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+                                        </Border>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
+                                        <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
+                                            <TextBox x:ConnectionId='16' x:Name="txtPrecio" Background="Transparent" PlaceholderText="Precio"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+                                        </Border>
+                                    </StackPanel>
+                                    <StackPanel x:ConnectionId='9' Name="extraIva" Margin="0,0,0,10">
+                                        <CheckBox x:ConnectionId='15' Name="chkExtraIVA"  Foreground="#FF9B9B9B" IsChecked="False">IVA Incluido</CheckBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
+                                        <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
+                                            <TextBox x:ConnectionId='14' x:Name="txtNumProductos" Background="Transparent" PlaceholderText="Cantidad de productos permitido"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+                                        </Border>
+                                    </StackPanel>
+
+                                    <StackPanel x:ConnectionId='10'   Name="grupo" Margin="0,0,0,10">
+                                        <ComboBox x:ConnectionId='13' x:Name="comboGrupo" HorizontalAlignment="Stretch">
+                                            <ComboBoxItem IsSelected="True">Ninguna</ComboBoxItem>
+                                        </ComboBox>
+                                    </StackPanel>
+                                    <StackPanel x:ConnectionId='11' Name="Imagen" Margin="0,0,0,10" Orientation="Horizontal" Visibility="Visible">
+                                        <Image x:ConnectionId='12' Name="Image" Width="50" Height="50" Margin="0,0,20,0" Source="ms-appx:///Assets/images.jpg"></Image>
+                                        <Button Content="cargar imagen" Background="{StaticResource InkToolbarAccentColorThemeBrush}" Foreground="{StaticResource InkToolbarButtonBackgroundThemeBrush}" Style="{StaticResource FormButtons}"></Button>
+
+                                    </StackPanel>
+
+                                </StackPanel>
+
+                            </StackPanel>
+
+
+
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+
+
+
+                <Grid x:ConnectionId='6' Name="presentationContent" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" MaxHeight="640" >
+                    <Frame x:ConnectionId='7' x:Name="receta"/>
+                </Grid>
+
+            </Grid>
+
+            <!--</ScrollViewer>-->
+        </ScrollViewer>
+
+
+    </Grid>
+
+
+</Page>
+

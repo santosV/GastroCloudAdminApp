@@ -25,6 +25,9 @@
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\GastroCloud.exe">
       <PackagePath>entrypoint\GastroCloud.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\.nuget\packages\Callisto\1.4.0\lib\netcore451\Callisto.dll">
+      <PackagePath>Callisto.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
     </AppxPackagedFile>
@@ -358,6 +361,9 @@
     <AppxPackagedFile Include="C:\Users\Santos Vega\.nuget\packages\Win2D.uwp\1.19.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\58369-200.png">
+      <PackagePath>Assets\58369-200.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\add picture.png">
       <PackagePath>Assets\add picture.png</PackagePath>
     </AppxPackagedFile>
@@ -394,6 +400,12 @@
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\backgorund.jpg">
+      <PackagePath>Assets\backgorund.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\discount-coupon-management.jpg">
+      <PackagePath>Assets\discount-coupon-management.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\Assets\images.jpg">
       <PackagePath>Assets\images.jpg</PackagePath>
     </AppxPackagedFile>
@@ -411,6 +423,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Santos Vega\.nuget\packages\Callisto\1.4.0\lib\netcore451\Callisto\themes\Generic.xbf">
+      <PackagePath>Callisto\themes\Generic.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

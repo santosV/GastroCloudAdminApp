@@ -3,12 +3,33 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="options" />
     <RootPropertyPathName Name="SelectedOption" />
-    <RootPropertyPathName Name="Width" />
+    <RootPropertyPathName Name="Tag" />
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Icon" />
     <RootPropertyPathName Name="ImagePath" />
     <RootPropertyPathName Name="index" />
+    <RootPropertyPathName Name="id" />
+    <RootPropertyPathName Name="nombre" />
+    <RootPropertyPathName Name="grupoId" />
+    <RootPropertyPathName Name="costo" />
+    <RootPropertyPathName Name="descripcion" />
     <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="tipo" />
+    <RootPropertyPathName Name="descuento" />
+    <RootPropertyPathName Name="puestoId" />
+    <RootPropertyPathName Name="iva" />
+    <RootPropertyPathName Name="custom" />
+    <RootPropertyPathName Name="capacidad" />
+    <RootPropertyPathName Name="numMesa" />
+    <RootPropertyPathName Name="precio" />
+    <RootPropertyPathName Name="diasDiponibles" />
+    <RootPropertyPathName Name="horaFin" />
+    <RootPropertyPathName Name="horaInicio" />
+    <RootPropertyPathName Name="razonsocial" />
+    <RootPropertyPathName Name="rfc" />
+    <RootPropertyPathName Name="sueldo" />
+    <RootPropertyPathName Name="extraId" />
+    <RootPropertyPathName Name="cantidad" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -18,83 +39,42 @@
       <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
       <RootProperty Name="DataContext" />
+      <RootEvent Name="SizeChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.ResourceDictionary">
       <RootProperty Name="MergedDictionaries" />
       <RootProperty Name="Source" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
-      <RootProperty Name="CompactPaneLength" />
-      <RootProperty Name="OpenPaneLength" />
-      <RootProperty Name="IsPaneOpen" />
-      <RootProperty Name="DisplayMode" />
-      <RootProperty Name="Pane" />
-      <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.VisualStateManager">
-      <RootMethod Name="GetVisualStateGroups" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.VisualStateGroup">
-      <RootProperty Name="States" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="Content" />
-      <RootMethod Name="GetHorizontalScrollMode" />
-      <RootMethod Name="SetHorizontalScrollMode" />
-      <RootMethod Name="GetVerticalScrollMode" />
-      <RootMethod Name="SetVerticalScrollMode" />
-      <RootMethod Name="GetHorizontalScrollBarVisibility" />
-      <RootMethod Name="SetHorizontalScrollBarVisibility" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Background" />
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.Storyboard">
       <RootProperty Name="Children" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Padding" />
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Name" />
-      <RootProperty Name="Visibility" />
+      <RootMethod Name="GetTargetProperty" />
+      <RootMethod Name="SetTargetProperty" />
+      <RootMethod Name="GetTargetName" />
+      <RootMethod Name="SetTargetName" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
-      <RootProperty Name="Content" />
-      <RootProperty Name="Tag" />
-      <RootProperty Name="Style" />
-      <RootProperty Name="Margin" />
-      <RootEvent Name="Click" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="FontFamily" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="TextAlignment" />
-      <RootProperty Name="Style" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="TextWrapping" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Padding" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Visibility" />
-      <RootProperty Name="MaxHeight" />
-      <RootProperty Name="Name" />
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.DoubleAnimation">
+      <RootProperty Name="From" />
+      <RootProperty Name="To" />
+      <RootProperty Name="Duration" />
+      <RootProperty Name="EnableDependentAnimation" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="Padding" />
-      <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="Background" />
-      <RootProperty Name="Margin" />
+      <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
-      <RootProperty Name="Name" />
+      <RootProperty Name="Opacity" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Tag" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="MaxHeight" />
+      <RootProperty Name="MaxWidth" />
+      <RootEvent Name="PointerPressed" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
@@ -102,23 +82,120 @@
       <RootMethod Name="GetRowSpan" />
       <RootMethod Name="SetRowSpan" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.VisualStateManager">
+      <RootMethod Name="GetVisualStateGroups" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Background" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Opacity" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="MaxHeight" />
+      <RootEvent Name="PointerPressed" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Fill" />
+      <RootProperty Name="Opacity" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="TextAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Inlines" />
+      <RootEvent Name="PointerPressed" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
+      <RootProperty Name="Stretch" />
+      <RootProperty Name="ImageSource" />
+      <RootProperty Name="Opacity" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
+      <RootProperty Name="Width" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Frame" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="VerticalScrollMode" />
+      <RootProperty Name="VerticalScrollBarVisibility" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="MinWidth" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
+      <RootProperty Name="Content" />
+      <RootProperty Name="Tag" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.VisualStateGroup">
+      <RootProperty Name="States" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.VisualState">
+      <RootProperty Name="StateTriggers" />
+      <RootProperty Name="Setters" />
+      <RootProperty Name="Storyboard" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.AdaptiveTrigger">
+      <RootProperty Name="MinWindowWidth" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Target" />
+      <RootProperty Name="Value" />
+      <RootProperty Name="Property" />
+    </RootType>
     <RootType FullName="GastroCloud.Views.MainLayout" />
     <RootType FullName="GastroCloud.GridResizable.OptionsViewModel" />
-    <RootType FullName="Windows.UI.Xaml.Media.SolidColorBrush">
-      <RootProperty Name="Color" />
-      <RootProperty Name="Opacity" />
-    </RootType>
-    <RootType FullName="GastroCloud.GridResizable.VariableGridView">
-      <RootProperty Name="IsSwipeEnabled" />
+    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="TabIndex" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="SelectedItem" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="SelectionMode" />
+      <RootProperty Name="IsSwipeEnabled" />
       <RootProperty Name="Background" />
       <RootProperty Name="ItemTemplate" />
-      <RootProperty Name="ItemsPanel" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
+      <RootMethod Name="GetAutomationId" />
+      <RootMethod Name="SetAutomationId" />
+      <RootMethod Name="GetName" />
+      <RootMethod Name="SetName" />
+      <RootMethod Name="GetAccessibilityView" />
+      <RootMethod Name="SetAccessibilityView" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Mode" />
@@ -126,38 +203,30 @@
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.VariableSizedWrapGrid">
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="ItemHeight" />
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="ItemWidth" />
-      <RootProperty Name="MaximumRowsOrColumns" />
-      <RootMethod Name="GetColumnSpan" />
-      <RootMethod Name="SetColumnSpan" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Source" />
       <RootProperty Name="Stretch" />
-      <RootProperty Name="Opacity" />
+      <RootProperty Name="Source" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Visibility" />
-      <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Visibility" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
-      <RootProperty Name="Template" />
+    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Fill" />
+      <RootProperty Name="Tag" />
     </RootType>
     <RootType FullName="GastroCloud.Layout.OptionsLayout" />
     <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
       <RootMethod Name="GetBehaviors" />
       <RootMethod Name="SetBehaviors" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
-      <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Width" />
@@ -172,6 +241,7 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />
+      <RootEvent Name="GotFocus" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Width" />
@@ -180,22 +250,16 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Style" />
       <RootProperty Name="Background" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Margin" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.SolidColorBrush">
+      <RootProperty Name="Color" />
+      <RootProperty Name="Opacity" />
     </RootType>
     <RootType FullName="Microsoft.Toolkit.Uwp.UI.Animations.Behaviors.Blur">
       <RootProperty Name="Value" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.VisualState">
-      <RootProperty Name="StateTriggers" />
-      <RootProperty Name="Setters" />
-      <RootProperty Name="Storyboard" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.AdaptiveTrigger">
-      <RootProperty Name="MinWindowWidth" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Setter">
-      <RootProperty Name="Target" />
-      <RootProperty Name="Value" />
-      <RootProperty Name="Property" />
     </RootType>
     <RootType FullName="GastroCloud.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
@@ -222,13 +286,6 @@
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.TemplateBindingExtension" />
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.Storyboard">
-      <RootProperty Name="Children" />
-      <RootMethod Name="GetTargetProperty" />
-      <RootMethod Name="SetTargetProperty" />
-      <RootMethod Name="GetTargetName" />
-      <RootMethod Name="SetTargetName" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames">
       <RootProperty Name="KeyFrames" />
     </RootType>
@@ -255,38 +312,43 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
-      <RootMethod Name="GetAccessibilityView" />
-      <RootMethod Name="SetAccessibilityView" />
-      <RootMethod Name="GetAutomationId" />
-      <RootMethod Name="SetAutomationId" />
-      <RootMethod Name="GetName" />
-      <RootMethod Name="SetName" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Background" />
       <RootProperty Name="Child" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="CornerRadius" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="CornerRadius" />
     </RootType>
-    <RootType FullName="GastroCloud.Views.Almacen.Form" />
     <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">
       <RootProperty Name="Source" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
-      <RootProperty Name="TabIndex" />
-      <RootProperty Name="SelectionMode" />
-      <RootProperty Name="IsSwipeEnabled" />
+    <RootType FullName="Windows.UI.Xaml.Controls.FlipView">
+      <RootProperty Name="Name" />
       <RootProperty Name="Background" />
-      <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="Items" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
-    <RootType FullName="GastroCloud.Views.Almacen.Index" />
+    <RootType FullName="Windows.UI.Xaml.Controls.FlipViewItem">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="GastroCloud.Views.Almacen.FormAlmacen" />
+    <RootType FullName="GastroCloud.Views.Almacen.IndexAlmacen" />
+    <RootType FullName="GastroCloud.Views.Almacen.ItemDetailRecipeView" />
+    <RootType FullName="GastroCloud.Views.Almacen.Movimientos.MovementView" />
+    <RootType FullName="GastroCloud.Views.Almacen.Movimientos.MovePresentationView" />
+    <RootType FullName="GastroCloud.Views.Almacen.SearchRecipeView" />
+    <RootType FullName="GastroCloud.Views.Area.AreaView" />
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Items" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
       <RootProperty Name="Tag" />
@@ -294,8 +356,11 @@
       <RootProperty Name="IsSelected" />
     </RootType>
     <RootType FullName="GastroCloud.Views.Area.Form" />
+    <RootType FullName="GastroCloud.Views.Area.Index" />
     <RootType FullName="GastroCloud.Views.Descuento.Form" />
+    <RootType FullName="GastroCloud.Views.Descuento.Index" />
     <RootType FullName="GastroCloud.Views.Empleado.Form" />
+    <RootType FullName="GastroCloud.Views.Empleado.IndexEmpleado" />
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
       <RootProperty Name="Name" />
       <RootProperty Name="Foreground" />
@@ -303,17 +368,29 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="GastroCloud.Views.Extra.Form" />
+    <RootType FullName="GastroCloud.Views.Extra.IndexExtras" />
     <RootType FullName="GastroCloud.Views.Grupos.Form" />
-    <RootType FullName="GastroCloud.Views.Grupos.IndexGroups" />
+    <RootType FullName="GastroCloud.Views.Grupo.IndexGrupo" />
+    <RootType FullName="GastroCloud.Views.Grupo.Personalizado.CustomGroup" />
+    <RootType FullName="GastroCloud.Views.Grupo.Personalizado.FormCustomGroup" />
+    <RootType FullName="GastroCloud.Views.Grupo.Personalizado.FormPortion" />
+    <RootType FullName="GastroCloud.Views.Grupo.Personalizado.ItemDetailRecipeView" />
+    <RootType FullName="GastroCloud.Views.Grupo.Personalizado.SearchRecipeView" />
     <RootType FullName="Windows.UI.Xaml.Controls.MediaElement">
       <RootProperty Name="Source" />
       <RootProperty Name="AreTransportControlsEnabled" />
     </RootType>
     <RootType FullName="GastroCloud.Views.Home.Home" />
     <RootType FullName="GastroCloud.Views.Insumo.Form" />
+    <RootType FullName="GastroCloud.Views.Insumo.IndexInsumos" />
     <RootType FullName="GastroCloud.Views.Mesas.Form" />
+    <RootType FullName="GastroCloud.Views.Mesas.IndexMesas" />
+    <RootType FullName="GastroCloud.Views.Paquete.DetailsPaquete" />
     <RootType FullName="GastroCloud.Views.Paquete.Form" />
+    <RootType FullName="GastroCloud.Views.Paquete.IndexPaquetes" />
+    <RootType FullName="GastroCloud.Views.Producto.DetailsProducto" />
     <RootType FullName="GastroCloud.Views.Producto.Form" />
+    <RootType FullName="GastroCloud.Views.Producto.IndexProductos" />
     <RootType FullName="Windows.UI.Xaml.Controls.TimePicker" />
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
       <RootProperty Name="Width" />
@@ -321,9 +398,16 @@
       <RootProperty Name="DateFormat" />
       <RootProperty Name="Name" />
     </RootType>
+    <RootType FullName="GastroCloud.Views.Promocion.DetailsPromocion" />
     <RootType FullName="GastroCloud.Views.Promocion.Form" />
+    <RootType FullName="GastroCloud.Views.Promocion.IndexPromocion" />
     <RootType FullName="GastroCloud.Views.Proveedor.Form" />
+    <RootType FullName="GastroCloud.Views.Proveedor.IndexProveedor" />
+    <RootType FullName="GastroCloud.Views.Puesto.DetailsPuestos" />
     <RootType FullName="GastroCloud.Views.Puesto.Form" />
+    <RootType FullName="GastroCloud.Views.Puesto.IndexPuestos" />
+    <RootType FullName="GastroCloud.Views.Receta.IndexReceta" />
     <RootType FullName="GastroCloud.Views.UnidadMedida.Form" />
+    <RootType FullName="GastroCloud.Views.UnidadMedida.Index" />
   </Roots.RootTypes>
 </Roots>

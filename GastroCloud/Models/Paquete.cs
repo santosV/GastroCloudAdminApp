@@ -21,11 +21,11 @@ namespace GastroCloud.Models
         {
             List<Paquete> desc = new List<Paquete>();
 
-            desc.Add(new Paquete { id = 1, imagen = ReadImageFile(), nombre = "Paquetellenes",precio = 90.00, iva = 12.00, numeroProductos =3,grupoId=2 });
-            desc.Add(new Paquete { id = 2, imagen = ReadImageFile(), nombre = "Paquetellenes", precio = 90.00, iva = 12.00, numeroProductos = 3, grupoId = 2 });
-            desc.Add(new Paquete { id = 3, imagen = ReadImageFile(), nombre = "Paquetellenes", precio = 90.00, iva = 12.00, numeroProductos = 3, grupoId = 2 });
-            desc.Add(new Paquete { id = 4, imagen = ReadImageFile(), nombre = "Paquetellenes", precio = 90.00, iva = 12.00, numeroProductos = 3, grupoId = 2 });
-            desc.Add(new Paquete { id = 5, imagen = ReadImageFile(), nombre = "Paquetellenes", precio = 90.00, iva = 12.00, numeroProductos = 3, grupoId = 2 });
+            desc.Add(new Paquete { id = 1,  nombre = "Paquetellenes",precio = 90.00, iva = 12.00, numeroProductos =3,grupoId=2 });
+            desc.Add(new Paquete { id = 2,  nombre = "Paquetellenes", precio = 90.00, iva = 12.00, numeroProductos = 3, grupoId = 2 });
+            desc.Add(new Paquete { id = 3,  nombre = "Paquetellenes", precio = 90.00, iva = 12.00, numeroProductos = 3, grupoId = 2 });
+            desc.Add(new Paquete { id = 4,  nombre = "Paquetellenes", precio = 90.00, iva = 12.00, numeroProductos = 3, grupoId = 2 });
+            desc.Add(new Paquete { id = 5,  nombre = "Paquetellenes", precio = 90.00, iva = 12.00, numeroProductos = 3, grupoId = 2 });
 
             return desc;
         }

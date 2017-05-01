@@ -125,33 +125,76 @@
     <Compile Include="Models\Promocion.cs" />
     <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\Puesto.cs" />
+    <Compile Include="Models\Receta.cs" />
     <Compile Include="Models\Unidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniversalPanel.cs" />
     <Compile Include="ViewModels\Forms.cs" />
-    <Compile Include="Views\Almacen\Form.xaml.cs">
-      <DependentUpon>Form.xaml</DependentUpon>
+    <Compile Include="Views\Almacen\FormAlmacen.xaml.cs">
+      <DependentUpon>FormAlmacen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Almacen\Index.xaml.cs">
-      <DependentUpon>Index.xaml</DependentUpon>
+    <Compile Include="Views\Almacen\IndexAlmacen.xaml.cs">
+      <DependentUpon>IndexAlmacen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Almacen\ItemDetailRecipeView.xaml.cs">
+      <DependentUpon>ItemDetailRecipeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Almacen\Movimientos\MovementView.xaml.cs">
+      <DependentUpon>MovementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Almacen\Movimientos\MovePresentationView.xaml.cs">
+      <DependentUpon>MovePresentationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Almacen\SearchRecipeView.xaml.cs">
+      <DependentUpon>SearchRecipeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Area\AreaView.xaml.cs">
+      <DependentUpon>AreaView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Area\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Area\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Descuento\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Descuento\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Empleado\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Empleado\IndexEmpleado.xaml.cs">
+      <DependentUpon>IndexEmpleado.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Extra\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Extra\IndexExtras.xaml.cs">
+      <DependentUpon>IndexExtras.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Grupo\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Index.xaml.cs">
-      <DependentUpon>Index.xaml</DependentUpon>
+    <Compile Include="Views\Grupo\IndexGrupo.xaml.cs">
+      <DependentUpon>IndexGrupo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grupo\Personalizado\CustomGroup.xaml.cs">
+      <DependentUpon>CustomGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grupo\Personalizado\FormCustomGroup.xaml.cs">
+      <DependentUpon>FormCustomGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grupo\Personalizado\FormPortion.xaml.cs">
+      <DependentUpon>FormPortion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grupo\Personalizado\ItemDetailRecipeView.xaml.cs">
+      <DependentUpon>ItemDetailRecipeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grupo\Personalizado\SearchRecipeView.xaml.cs">
+      <DependentUpon>SearchRecipeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
@@ -159,26 +202,41 @@
     <Compile Include="Views\Insumo\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Insumo\IndexInsumos.xaml.cs">
+      <DependentUpon>IndexInsumos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Mesas\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Paquete\Form.xaml.cs">
-      <DependentUpon>Form.xaml</DependentUpon>
+    <Compile Include="Views\Mesas\IndexMesas.xaml.cs">
+      <DependentUpon>IndexMesas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Producto\Form.xaml.cs">
-      <DependentUpon>Form.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Promocion\Form.xaml.cs">
-      <DependentUpon>Form.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Views\Paquete\DetailsPaquete.xaml.cs" />
+    <Compile Include="Views\Paquete\Form.xaml.cs" />
+    <Compile Include="Views\Paquete\IndexPaquetes.xaml.cs" />
+    <Compile Include="Views\Producto\DetailsProducto.xaml.cs" />
+    <Compile Include="Views\Producto\Form.xaml.cs" />
+    <Compile Include="Views\Producto\IndexProductos.xaml.cs" />
+    <Compile Include="Views\Promocion\DetailsPromocion.xaml.cs" />
+    <Compile Include="Views\Promocion\Form.xaml.cs" />
+    <Compile Include="Views\Promocion\IndexPromocion.xaml.cs" />
     <Compile Include="Views\Proveedor\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Puesto\Form.xaml.cs">
-      <DependentUpon>Form.xaml</DependentUpon>
+    <Compile Include="Views\Proveedor\IndexProveedor.xaml.cs">
+      <DependentUpon>IndexProveedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Puesto\DetailsPuestos.xaml.cs" />
+    <Compile Include="Views\Puesto\Form.xaml.cs" />
+    <Compile Include="Views\Puesto\IndexPuestos.xaml.cs" />
+    <Compile Include="Views\Receta\IndexReceta.xaml.cs">
+      <DependentUpon>IndexReceta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UnidadMedida\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UnidadMedida\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -188,7 +246,10 @@
     <None Include="GastroCloud_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\58369-200.png" />
     <Content Include="Assets\add picture.png" />
+    <Content Include="Assets\backgorund.jpg" />
+    <Content Include="Assets\discount-coupon-management.jpg" />
     <Content Include="Assets\images.jpg" />
     <Content Include="Assets\LOGO.png" />
     <Content Include="Assets\LogoLetter.png" />
@@ -225,11 +286,31 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
-    <Page Include="Views\Almacen\Form.xaml">
+    <Page Include="Views\Almacen\FormAlmacen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Almacen\Index.xaml">
+    <Page Include="Views\Almacen\IndexAlmacen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Almacen\ItemDetailRecipeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Almacen\Movimientos\MovementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Almacen\Movimientos\MovePresentationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Almacen\SearchRecipeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Area\AreaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -237,7 +318,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Area\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Descuento\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Descuento\Index.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,15 +334,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Empleado\IndexEmpleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Extra\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Extra\IndexExtras.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Grupo\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Index.xaml">
+    <Page Include="Views\Grupo\IndexGrupo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Grupo\Personalizado\CustomGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Grupo\Personalizado\FormCustomGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Grupo\Personalizado\FormPortion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Grupo\Personalizado\ItemDetailRecipeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Grupo\Personalizado\SearchRecipeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -265,31 +382,83 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Insumo\IndexInsumos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Mesas\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Paquete\Form.xaml">
+    <Page Include="Views\Mesas\IndexMesas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Paquete\DetailsPaquete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Paquete\Form.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Paquete\IndexPaquetes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Producto\DetailsProducto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Producto\Form.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Producto\IndexProductos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Promocion\DetailsPromocion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Promocion\Form.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Promocion\IndexPromocion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Proveedor\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Puesto\Form.xaml">
+    <Page Include="Views\Proveedor\IndexProveedor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Puesto\DetailsPuestos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Puesto\Form.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Puesto\IndexPuestos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Receta\IndexReceta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\UnidadMedida\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UnidadMedida\Index.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

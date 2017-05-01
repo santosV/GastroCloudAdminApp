@@ -19,11 +19,11 @@ namespace GastroCloud.Models
         {
             List<Extra> desc = new List<Extra>();
 
-            desc.Add(new Extra { id = 1, imagen = ReadImageFile(), descripcion = "aderezo", costo = 15.00, iva = 10.00});
-            desc.Add(new Extra { id = 2, imagen = ReadImageFile(), descripcion = "ketchup", costo = 5.00, iva = 18.00 });
-            desc.Add(new Extra { id = 3, imagen = ReadImageFile(), descripcion = "mayonesa", costo = 23.00, iva = 28.00 });
-            desc.Add(new Extra { id = 4, imagen = ReadImageFile(), descripcion = "pan", costo = 5.00, iva = 23.00 });
-            desc.Add(new Extra { id = 5, imagen = ReadImageFile(), descripcion = "tomate", costo = 17.00, iva = 28.00 });
+            desc.Add(new Extra { id = 1,  descripcion = "aderezo", costo = 15.00, iva = 10.00});
+            desc.Add(new Extra { id = 2,  descripcion = "ketchup", costo = 5.00, iva = 18.00 });
+            desc.Add(new Extra { id = 3,  descripcion = "mayonesa", costo = 23.00, iva = 28.00 });
+            desc.Add(new Extra { id = 4,  descripcion = "pan", costo = 5.00, iva = 23.00 });
+            desc.Add(new Extra { id = 5,  descripcion = "tomate", costo = 17.00, iva = 28.00 });
 
             return desc;
         }

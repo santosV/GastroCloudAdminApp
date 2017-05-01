@@ -12,7 +12,7 @@ namespace GastroCloud.Models
         public int id { get; set; }
         public string nombre { get; set; }
         public double precio { get; set; }
-        public double iva { get; set; }
+        public bool iva { get; set; }
         public Byte[] imagen { get; set; }
         public int grupoId { get; set; }
         public bool custom { get; set; }
@@ -22,11 +22,11 @@ namespace GastroCloud.Models
         {
             List<Producto> desc = new List<Producto>();
 
-            desc.Add(new Producto { id = 1, imagen = ReadImageFile(), nombre = "Hamburguesa", precio = 50.00, iva = 12.00, custom = false, grupoId = 2 ,usuarioId=2});
-            desc.Add(new Producto { id = 2, imagen = ReadImageFile(), nombre = "Hamburguesa", precio = 50.00, iva = 12.00, custom = false, grupoId = 2, usuarioId = 2 });
-            desc.Add(new Producto { id = 3, imagen = ReadImageFile(), nombre = "Hamburguesa", precio = 50.00, iva = 12.00, custom = false, grupoId = 2, usuarioId = 2 });
-            desc.Add(new Producto { id = 4, imagen = ReadImageFile(), nombre = "Hamburguesa", precio = 50.00, iva = 12.00, custom = false, grupoId = 2, usuarioId = 2 });
-            desc.Add(new Producto { id = 5, imagen = ReadImageFile(), nombre = "Hamburguesa", precio = 50.00, iva = 12.00, custom = false, grupoId = 2, usuarioId = 2 });
+            desc.Add(new Producto { id = 1,  nombre = "Hamburguesa", precio = 50.00, iva = true, custom = false, grupoId = 2 ,usuarioId=2});
+            desc.Add(new Producto { id = 2,  nombre = "Hamburguesa", precio = 50.00, iva = true, custom = false, grupoId = 2, usuarioId = 2 });
+            desc.Add(new Producto { id = 3,  nombre = "Hamburguesa", precio = 50.00, iva = true, custom = false, grupoId = 2, usuarioId = 2 });
+            desc.Add(new Producto { id = 4,  nombre = "Hamburguesa", precio = 50.00, iva = true, custom = false, grupoId = 2, usuarioId = 2 });
+            desc.Add(new Producto { id = 5,  nombre = "Hamburguesa", precio = 50.00, iva = true, custom = false, grupoId = 2, usuarioId = 2 });
 
             return desc;
         }

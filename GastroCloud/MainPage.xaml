@@ -154,9 +154,6 @@
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
-            
-            
-
         </VisualStateManager.VisualStateGroups>
 
 

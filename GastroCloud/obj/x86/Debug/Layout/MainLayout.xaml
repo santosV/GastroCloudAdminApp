@@ -12,71 +12,139 @@
         <ResourceDictionary >
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ms-appx:///Styles/Styles.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
+            
+            <Storyboard x:ConnectionId='1' x:Name="OpenHamburguer">
+                <DoubleAnimation x:ConnectionId='4' x:Name="AnimationOpen"  Storyboard.TargetProperty="Width" From="0" To="200" Duration="0:0:0.15" EnableDependentAnimation="true"/>
+            </Storyboard>
+
+            <Storyboard x:ConnectionId='2' x:Name="CloseHamburguer">
+                <DoubleAnimation x:ConnectionId='3' x:Name="AnimationClose"  Storyboard.TargetProperty="Width" From="200" To="0" Duration="0:0:0.15" EnableDependentAnimation="true"/>
+            </Storyboard>
+
         </ResourceDictionary>
     </Page.Resources>
     <!--Terminan Recursos-->
+    <Grid>
+
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame x:ConnectionId='11' x:Name="MainFrame" Grid.Row="1" Grid.Column="1" >
+
+            </Frame>
+
+            
+
+            <ScrollViewer x:ConnectionId='12' x:Name="scroll" Grid.Row="1" Grid.Column="0" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left">
+                <StackPanel x:ConnectionId='13'  x:Name="stackHmbgr" Width="0" HorizontalAlignment="Left" >
+
+                    <StackPanel.Background>
+                        <ImageBrush Stretch="UniformToFill" ImageSource="https://source.unsplash.com/collection/781559"/>
+                    </StackPanel.Background>
+                    <Grid  Opacity="0.5" Background="black">
+                        <StackPanel Opacity="0" Margin="0,0,0,019" Padding="0,19" >
 
 
-    <SplitView x:ConnectionId='1' x:Name="HeaderNav" CompactPaneLength="50" OpenPaneLength="300" IsPaneOpen="False"  DisplayMode="CompactInline">
+                            <StackPanel Background="{ThemeResource SystemControlBackgroundAltMediumLowBrush}" Margin="0,5,0,0">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="" FontSize="72"  Foreground="White" TextAlignment="Center"></TextBlock>
+                                <TextBlock Text="NOMBRE EMPRESA" TextAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="NoWrap" Foreground="White"></TextBlock>
+                            </StackPanel>
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton  Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
 
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:ConnectionId='2' x:Name="VisualStateGroup"/>
-        </VisualStateManager.VisualStateGroups>
-        <!--Header nav-->
+                        </StackPanel>
+                    </Grid>
 
-        <SplitView.Pane >
+                    <Grid Margin="0,-681,0,0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
 
-            <ScrollViewer>
-                <StackPanel Background="{ThemeResource SystemControlBackgroundAccentBrush}">
-                    <RadioButton x:ConnectionId='3'                            Content="" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
-                    <StackPanel Background="{ThemeResource SystemControlBackgroundAltMediumLowBrush}" Margin="0,0,0,20" Padding="0,20">
-                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="" FontSize="72"  Foreground="White" TextAlignment="Center"></TextBlock>
-                        <TextBlock Text="NOMBRE EMPRESA" TextAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" Foreground="White"></TextBlock>
-                    </StackPanel>
+                        <StackPanel Grid.Row="0" Background="{ThemeResource SystemControlBackgroundAltMediumLowBrush}">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="" FontSize="72"  Foreground="White" TextAlignment="Center"></TextBlock>
+                            <TextBlock Text="NOMBRE EMPRESA" TextAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="NoWrap" Foreground="White"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="1">
+                            <RadioButton x:ConnectionId='14' x:Name="btnHome"                       Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton x:ConnectionId='15' x:Name="btnGrupos"                          Content="Grupos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton x:ConnectionId='16' x:Name="btnAlmacenes"                             Content="Almacenes" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton x:ConnectionId='17' x:Name="btnInsumos"                           Content="Insumos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton x:ConnectionId='18' x:Name="btnProveedores"                               Content="Proveedores " Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton x:ConnectionId='19' x:Name="btnProductos"                             Content="Productos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton x:ConnectionId='20' x:Name="btnCompras"                           Content="Compras" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton x:ConnectionId='21' x:Name="btnReportes"                            Content="Reportes" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton x:ConnectionId='22' x:Name="btnDescuentos"                               Content="Descuentos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton x:ConnectionId='23' x:Name="btnPuestos"                           Content="Puestos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                            <RadioButton x:ConnectionId='24' x:Name="btnUMedida"                           Content="Unidades de Medida" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                        </StackPanel>
 
-                    <RadioButton x:ConnectionId='4' x:Name="btnHome"                       Content="Home" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
-                    <RadioButton x:ConnectionId='5' x:Name="btnGrupos"                          Content="Grupos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
-                    <RadioButton x:ConnectionId='6' x:Name="btnAlmacenes"                             Content="Almacenes" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
-                    <RadioButton x:ConnectionId='7' x:Name="btnInsumos"                           Content="Insumos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
-                    <RadioButton x:ConnectionId='8' x:Name="btnProveedores"                               Content="Proveedores " Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
-                    <RadioButton x:ConnectionId='9' x:Name="btnPresentaciones"                                  Content="Presentaciones" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
-                    <RadioButton x:ConnectionId='10' x:Name="btnProductos"                             Content="Productos" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
-                    <RadioButton x:ConnectionId='11' x:Name="btnCompras"                           Content="Compras" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
-                    <RadioButton x:ConnectionId='12' x:Name="btnReportes"                            Content="Reportes" Tag="" Style="{StaticResource HamburguerRadioButtonStyle}" />
+                    </Grid>
                 </StackPanel>
             </ScrollViewer>
-        </SplitView.Pane>
-        <!--Termina Header nav-->
 
+           
 
-        <!--Contenido-->
-        <SplitView.Content>
-            <Grid Padding="30">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition Height="4*"/>
-                </Grid.RowDefinitions>
-                <StackPanel  Grid.Row="0" Orientation="Vertical">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock x:ConnectionId='14' x:Name="headerIcon" FontFamily="Segoe MDL2 Assets" Text="" FontSize="36"    TextAlignment="Center" Margin="0,13,5,0" Foreground="#333"></TextBlock>
-                        <TextBlock x:ConnectionId='15' x:Name="headerTitle"  Text="Grupos" Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap"  Foreground="#333" Margin="0"/>
-                    </StackPanel>
-                    <StackPanel Height="10" Background="{StaticResource InkToolbarAccentColorThemeBrush}">
-                    </StackPanel>
+        </Grid>
+
+        <StackPanel x:ConnectionId='5'  x:Name="Header" Background="{ThemeResource InkToolbarAccentColorThemeBrush}" VerticalAlignment="Top" Height="65">
+            <TextBlock x:ConnectionId='10' FontFamily="Segoe MDL2 Assets" FontSize="30" Margin="15,15" TextAlignment="Left"                                    Text="" Foreground="White" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel x:ConnectionId='6'  Name="titleGround" HorizontalAlignment="Center">
+            <TextBlock x:ConnectionId='9' Name="headerTitle" Foreground="White" Margin="-50,0,0,0" FontFamily="Sensations and Qualities" FontSize="60" Text="Grupos"/>
+        </StackPanel>
+
+        <StackPanel Margin="15,10"  VerticalAlignment="Top"   HorizontalAlignment="Right"   Orientation="Horizontal">
+            <Ellipse  Height="43" Width="43" Margin="0"  VerticalAlignment="Top">
+                <Ellipse.Fill>
+                    <ImageBrush x:ConnectionId='8' x:Name="imgCajero"  Stretch="UniformToFill" ImageSource="http://www.multichannel.com/sites/default/files/public/styles/blog_content/public/javier%20garcia%20400%20x300.jpg?itok=OMZTb9qC" />
+                </Ellipse.Fill>
+            </Ellipse>
+            <Grid>
+                <StackPanel x:ConnectionId='7' x:Name="nombreEmpleado" Visibility="Collapsed" VerticalAlignment="Center" Margin="10,0,0,0">
+                    <TextBlock FontFamily="Century Gothic" Foreground="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" Margin="0"  FontSize="20" Text="Santos Vega" FontWeight="Bold"/>
+                    <TextBlock  FontFamily="Century Gothic" Margin="0,-5,0,0" Foreground="#f1f1f1" FontWeight="Light" FontSize="13" Text="Gerente de tienda"/>
                 </StackPanel>
-                
-                <Frame x:ConnectionId='13' x:Name="MainFrame" Grid.Row="1" >
-
-                </Frame>
             </Grid>
+        </StackPanel>
 
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='25' x:Name="VisualStateGroup"/>
 
-        </SplitView.Content>
-        <!--Termina Contenido-->
-    </SplitView>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                        <AdaptiveTrigger MinWindowWidth="640"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="nombreEmpleado.Visibility" Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
 
+        </VisualStateManager.VisualStateGroups>
 
+    </Grid>
+    
 
 </Page>
 
