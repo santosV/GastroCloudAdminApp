@@ -28,7 +28,7 @@
     <AppXManifest Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-02T20:13:12.210</Modified>
+      <Modified>2017-05-02T20:25:26.172</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -573,11 +573,11 @@
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-02T20:13:08.612</Modified>
+      <Modified>2017-05-02T20:25:22.813</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Core\GastroCloud.exe">
       <PackagePath>GastroCloud.exe</PackagePath>
-      <Modified>2017-05-02T20:13:12.173</Modified>
+      <Modified>2017-05-02T20:25:26.125</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
