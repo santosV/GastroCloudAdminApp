@@ -38,6 +38,12 @@ namespace GastroCloud.Views.Insumo
 
         }
 
+        private void StackPanel_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Views.Insumo.Form));
+        }
+
+
         private void btnCrear_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Views.Insumo.Form));

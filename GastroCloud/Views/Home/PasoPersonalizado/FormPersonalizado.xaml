@@ -1,0 +1,287 @@
+﻿<Page
+    x:Class="GastroCloud.Views.PasoPersonalizado.FormPersonalizado"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GastroCloud.Views.PasoPersonalizado"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <!--Recursos-->
+    <Page.Resources>
+
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <CollectionViewSource
+            x:Name="itemsViewSource"
+            Source="{Binding index}"/>
+
+        </ResourceDictionary>
+    </Page.Resources>
+
+
+
+    <!--Terminan Recursos-->
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup"/>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="guardar.HorizontalAlignment" Value="Right"/>
+                        <Setter Target="cancelar.HorizontalAlignment" Value="Left"/>
+                        <Setter Target="eliminar.Width" Value="612"/>
+                        <Setter Target="guardar.Width" Value="300"/>
+                        <Setter Target="cancelar.Width" Value="300"/>
+                        <Setter Target="eliminar.Margin" Value="-8,0,0,0"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="{ThemeResource InkToolbarAccentColorThemeBrush}">
+                <Grid Height="250" Background="{ThemeResource AppBarToggleButtonOverflowLabelForegroundCheckedDisabled}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" FontSize="30" Margin="0,15,15,0" Foreground="White" Text=""/>
+                    <StackPanel VerticalAlignment="Center" Grid.Row="0" >
+                        <Grid VerticalAlignment="Center">
+                            <Image x:Name="imgAlmacen" Height="300" Stretch="UniformToFill" Source="https://source.unsplash.com/collection/781608" />
+                            <Ellipse Height="180" Width="180" Margin="0,-40,0,0" VerticalAlignment="Center" Fill="Black" Opacity="0.4"/>
+                            <TextBlock Margin="0,-100,0,0" FontFamily="Segoe MDL2 Assets" Text="" FontSize="70"  Foreground="White" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock  Margin="0,-5,0,0" VerticalAlignment="Center"  HorizontalAlignment="Center" FontWeight="ExtraBlack" Foreground="White" FontSize="19" Text="Ensaladas" />
+                            <TextBlock VerticalAlignment="Center" Margin="0,30,0,0" HorizontalAlignment="Center" FontWeight="ExtraLight" Foreground="White" FontSize="19" Text="Paso #1" TextWrapping="Wrap"/>
+                            <TextBlock VerticalAlignment="Center" Margin="0,60,0,0" HorizontalAlignment="Center" FontWeight="Light" Foreground="White" FontSize="13" Text="Pasos Totales: 4" TextWrapping="Wrap"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+
+            <!--Formulario-->
+            <ScrollViewer Grid.Row="1"  VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto" >
+                <Grid  Margin="10" >
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
+
+                        <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="3,0,0,0">
+                            <TextBox x:Name="txtNombre" Background="Transparent" PlaceholderText="Nombre del Paso Personalizado"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+                        </Border>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Column="0" Tag="{Binding id}" Foreground="#FF9B9B9B" Margin="3,0,0,0" Click="chkExtras_Click">Permitir extras</CheckBox>
+                            <Border CornerRadius="8" Grid.Column="1" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="9,5,0,7" HorizontalAlignment="Stretch">
+                                <TextBox x:Name="txtPrecio" Background="Transparent" PlaceholderText="Precio Extra"  BorderThickness="0" Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+                            </Border>
+                        </Grid>
+
+
+
+
+                        <ComboBox x:Name="comboGrupoInsumos" HorizontalAlignment="Stretch" PlaceholderText="Selecciona el Grupo de insumos">
+                            <ComboBoxItem IsSelected="True">Ninguna</ComboBoxItem>
+                        </ComboBox>
+
+                        <Border CornerRadius="8" Grid.Column="1" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,5,0,5" HorizontalAlignment="Stretch">
+                            <TextBox x:Name="txtCantidad" Background="Transparent" PlaceholderText="Cantidad por unidad"  BorderThickness="0" Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+                        </Border>
+
+                        <TextBlock  FontWeight="Medium" Foreground="#333" FontSize="18" Text="Insumos" TextWrapping="Wrap"/>
+                        <ScrollViewer Grid.Row="2" Height="115" Margin="0,10,0,0" HorizontalScrollMode="Auto" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+                            <GridView
+                                x:Name="ListaInsumos"
+                                AutomationProperties.AutomationId="ItemGridView"
+                                AutomationProperties.Name="Items In Group"
+                                TabIndex="1"
+                                    
+                                Grid.RowSpan="2"
+                                ItemsSource="{Binding listaInsumos}"
+                                SelectionMode="None"
+                                IsSwipeEnabled="True" Background="{StaticResource FocusVisualWhiteStrokeThemeBrush}">
+                                <GridView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Height="100" Width="220"  Tag="{Binding id}" >
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Border HorizontalAlignment="Stretch" CornerRadius="100"  BorderThickness="3" BorderBrush="{ThemeResource InkToolbarAccentColorThemeBrush}" Margin="0">
+                                                    <Grid VerticalAlignment="Center">
+
+                                                        <Ellipse  Height="95" Width="95" Margin="0"  VerticalAlignment="Center">
+                                                            <Ellipse.Fill>
+                                                                <ImageBrush x:Name="imgAlmacen"  Stretch="UniformToFill" ImageSource="https://source.unsplash.com/collection/781608" />
+                                                            </Ellipse.Fill>
+                                                        </Ellipse>
+                                                        <Ellipse Height="95" Width="95" VerticalAlignment="Center" Fill="Black" Opacity="0.4"/>
+                                                        <Image Source="@/Assets/58369-200.png" Height="36" Width="36" VerticalAlignment="Center"/>
+
+                                                    </Grid>
+                                                </Border>
+
+                                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="15,0,0,0">
+                                                    <TextBlock Text="{Binding descripcion}" Foreground="{StaticResource InkToolbarAccentColorThemeBrush}" FontFamily="Segoe UI" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"/>
+                                                    <TextBlock FontFamily="Segoe UI" FontWeight="ExtraLight" FontSize="15" Foreground="Gray" Text="{Binding costo}"/>
+                                                    <TextBlock FontFamily="Segoe UI" FontWeight="ExtraLight" FontSize="15" Foreground="Gray" Text="{Binding grupoId}"/>
+                                                </StackPanel>
+                                            </Grid>
+
+                                            <Border Margin="0,3,0,0" Grid.Row="1" Width="400" HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+
+
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridView.ItemTemplate>
+                                <GridView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapGrid Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </GridView.ItemsPanel>
+                            </GridView>
+                        </ScrollViewer>
+
+                        <Border Margin="0,3,0,0" Grid.Row="1" Width="auto" HorizontalAlignment="Stretch"  Height="2" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+
+                        <StackPanel x:Name="stackExtras" Tag="{Binding id}" Grid.Row="2"  Visibility="Collapsed">
+
+                            <TextBlock  FontWeight="Medium" Foreground="#333" FontSize="18" Text="Extras" TextWrapping="Wrap"/>
+                            <ScrollViewer Grid.Row="2" Height="115" Margin="0,5,0,0" HorizontalScrollMode="Auto" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+                                <Grid>
+                                    <GridView
+                                            x:Name="ListExtras"
+                                            AutomationProperties.AutomationId="ItemGridView"
+                                            AutomationProperties.Name="Items In Group"
+                                            TabIndex="1"
+                                            Grid.RowSpan="2"
+                                            SelectionMode="None"
+                                            IsSwipeEnabled="True" Background="{StaticResource FocusVisualWhiteStrokeThemeBrush}">
+                                        <GridView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Height="100" Width="220" Tag="{Binding id}">
+
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid Grid.Row="0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Border HorizontalAlignment="Stretch" CornerRadius="100"  BorderThickness="3" BorderBrush="{ThemeResource InkToolbarAccentColorThemeBrush}" Margin="0">
+                                                            <Grid VerticalAlignment="Center">
+
+                                                                <Ellipse  Height="95" Width="95" Margin="0"  VerticalAlignment="Center">
+                                                                    <Ellipse.Fill>
+                                                                        <ImageBrush x:Name="imgAlmacen"  Stretch="UniformToFill" ImageSource="https://source.unsplash.com/collection/781608" />
+                                                                    </Ellipse.Fill>
+                                                                </Ellipse>
+                                                                <Ellipse Height="95" Width="95" VerticalAlignment="Center" Fill="Black" Opacity="0.4"/>
+                                                                <Image Source="@/Assets/58369-200.png" Height="36" Width="36" VerticalAlignment="Center"/>
+
+                                                            </Grid>
+                                                        </Border>
+
+                                                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="15,0,0,0">
+                                                            <TextBlock Text="{Binding descripcion}" Foreground="{StaticResource InkToolbarAccentColorThemeBrush}" FontFamily="Segoe UI" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"/>
+                                                            <TextBlock FontFamily="Segoe UI" FontWeight="ExtraLight" FontSize="15" Foreground="Gray" Text="{Binding costo}"/>
+                                                            <TextBlock FontFamily="Segoe UI" FontWeight="ExtraLight" FontSize="15" Foreground="Gray" Text="{Binding grupoId}"/>
+                                                        </StackPanel>
+                                                    </Grid>
+
+                                                    <Border Margin="0,3,0,0" Grid.Row="1" Width="400" HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+
+
+                                                </Grid>
+                                            </DataTemplate>
+                                        </GridView.ItemTemplate>
+                                        <GridView.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapGrid Orientation="Horizontal"/>
+                                            </ItemsPanelTemplate>
+                                        </GridView.ItemsPanel>
+                                    </GridView>
+                                </Grid>
+                            </ScrollViewer>
+
+                        </StackPanel>
+
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button Name="guardar" HorizontalAlignment="Stretch" Grid.Column="0"  Margin="0,10,10,10" Style="{StaticResource buttonImportant}">Guardar</Button>
+                            <Button Name="cancelar" HorizontalAlignment="Stretch"  Grid.Column="1" Margin="0,10,0,10">Cancelar</Button>
+                        </Grid>
+                        <Button Name="eliminar" HorizontalAlignment="Stretch"   Background="#ff0f35" Foreground="White">Eliminar</Button>
+
+
+
+                    </StackPanel>
+
+
+
+                </Grid>
+
+            </ScrollViewer>
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Margin="0,0,0,0"   HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+            <StackPanel Grid.Row="1" Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Grid Margin="10,0,10,0" Tag="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="20"  FontFamily="Segoe MDL2 Assets" Text="" Foreground="Gray"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontWeight="ExtraLight" Text="Registro" FontSize="10"  Foreground="Gray"/>
+                    <Rectangle Grid.Row="2" Tag="0" Name="formIndicator"  HorizontalAlignment="Stretch" Visibility="Visible" Height="5"  Fill="{ThemeResource InkToolbarAccentColorThemeBrush}"></Rectangle>
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

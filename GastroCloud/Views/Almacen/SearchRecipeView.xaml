@@ -30,7 +30,7 @@
                             <TextBox Grid.Column="1" x:Name="txtBuscador" Background="Transparent" PlaceholderText="Buscar" Margin="0,5,0,0"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
                         </Grid>
                     </Border>
-                <TextBlock Grid.Column="1" PointerPressed="cancel" Text="Cancelar" Foreground="{ThemeResource InkToolbarAccentColorThemeBrush}" VerticalAlignment="Center" Margin="10"/>
+                <TextBlock Grid.Column="1" PointerPressed="selection_PointerPressed" Text="Cancelar" Foreground="{ThemeResource InkToolbarAccentColorThemeBrush}" VerticalAlignment="Center" Margin="10"/>
             </Grid>
                 <Border Margin="0,0,0,0" Grid.Row="1"  HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
             </StackPanel>

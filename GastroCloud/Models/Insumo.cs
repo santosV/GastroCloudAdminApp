@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GastroCloud.Models
 {
-    class Insumo
+    public class Insumo
     {
         public int id { get; set; }
         public double costo { get; set; }
@@ -23,11 +23,11 @@ namespace GastroCloud.Models
         {
             List<Insumo> desc = new List<Insumo>();
 
-            desc.Add(new Insumo { id = 1, descripcion = "Pepino", costo = 10.00, iva = true, grupoId = 2, rendimiento = 2.00, unidadId = 2, minimo = 10, maximo = 100, tipo = 1, });
-            desc.Add(new Insumo { id = 2, descripcion = "Pepino", costo = 10.00, iva = true, grupoId = 2, rendimiento = 2.00, unidadId = 2, minimo = 10, maximo = 100, tipo = 1, });
-            desc.Add(new Insumo { id = 3, descripcion = "Pepino", costo = 10.00, iva = true, grupoId = 2, rendimiento = 2.00, unidadId = 2, minimo = 10, maximo = 100, tipo = 1, });
-            desc.Add(new Insumo { id = 4, descripcion = "Pepino", costo = 10.00, iva = true, grupoId = 2, rendimiento = 2.00, unidadId = 2, minimo = 10, maximo = 100, tipo = 1, });
-            desc.Add(new Insumo { id = 5, descripcion = "Pepino", costo = 10.00, iva = true, grupoId = 2, rendimiento = 2.00, unidadId = 2, minimo = 10, maximo = 100, tipo = 1, });
+            desc.Add(new Insumo { id = 6, descripcion = "Pepino", costo = 10.00, iva = true, grupoId = 2, rendimiento = 2.00, unidadId = 2, minimo = 10, maximo = 100, tipo = 1, });
+            desc.Add(new Insumo { id = 7, descripcion = "Pepino", costo = 10.00, iva = true, grupoId = 2, rendimiento = 2.00, unidadId = 2, minimo = 10, maximo = 100, tipo = 1, });
+            desc.Add(new Insumo { id = 8, descripcion = "Pepino", costo = 10.00, iva = true, grupoId = 2, rendimiento = 2.00, unidadId = 2, minimo = 10, maximo = 100, tipo = 1, });
+            desc.Add(new Insumo { id = 9, descripcion = "Pepino", costo = 10.00, iva = true, grupoId = 2, rendimiento = 2.00, unidadId = 2, minimo = 10, maximo = 100, tipo = 1, });
+            desc.Add(new Insumo { id = 10, descripcion = "Pepino", costo = 10.00, iva = true, grupoId = 2, rendimiento = 2.00, unidadId = 2, minimo = 10, maximo = 100, tipo = 1, });
 
             return desc;
         }

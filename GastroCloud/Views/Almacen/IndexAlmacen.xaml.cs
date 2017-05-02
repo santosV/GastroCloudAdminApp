@@ -28,5 +28,10 @@ namespace GastroCloud.Views.Almacen
             GastroCloud.Models.Almacen almacen = new Models.Almacen();
             gridAlmacen.ItemsSource = almacen.getDescuento();
         }
+
+        private void StackPanel_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Views.Almacen.FormAlmacen));
+        }
     }
 }

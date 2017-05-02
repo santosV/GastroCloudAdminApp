@@ -1,0 +1,144 @@
+﻿<Page
+    x:Class="GastroCloud.Views.Puesto.Form"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GastroCloud.Views.Puesto"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--Recursos-->
+    <Page.Resources>
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <CollectionViewSource
+            x:Name="itemsViewSource"
+            Source="{Binding index}"/>
+
+        </ResourceDictionary>
+    </Page.Resources>
+    <!--Terminan Recursos-->
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup"/>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="guardar.HorizontalAlignment" Value="Right"/>
+                        <Setter Target="cancelar.HorizontalAlignment" Value="Left"/>
+                        <Setter Target="eliminar.Width" Value="612"/>
+                        <Setter Target="guardar.Width" Value="300"/>
+                        <Setter Target="cancelar.Width" Value="300"/>
+                        <Setter Target="eliminar.Margin" Value="-8,0,0,0"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <!--Contenido-->
+        <FlipView Name="mainContent" Grid.Row="0" Background="{ThemeResource FocusVisualWhiteStrokeThemeBrush}">
+            <FlipViewItem Background="White">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Foto-->
+
+                    <Grid Grid.Row="0" Background="{ThemeResource InkToolbarAccentColorThemeBrush}">
+                        <Grid Height="250" Background="{ThemeResource AppBarToggleButtonOverflowLabelForegroundCheckedDisabled}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel VerticalAlignment="Center" Grid.Row="0" >
+                                <Grid VerticalAlignment="Center">
+                                    <Image x:Name="imgAlmacen" Height="300" Stretch="UniformToFill" Source="https://source.unsplash.com/collection/783769" />
+                                    <Ellipse Height="180" Width="180" Margin="0,-40,0,0" VerticalAlignment="Center" Fill="Black" Opacity="0.4"/>
+                                    <TextBlock Margin="0,-100,0,0" FontFamily="Segoe MDL2 Assets" Text="" FontSize="70"  Foreground="White" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock  Margin="0,-5,0,0" VerticalAlignment="Center"  HorizontalAlignment="Center" FontWeight="ExtraBlack" Foreground="White" FontSize="19" Text="NARANJA DULCE" />
+                                    <TextBlock VerticalAlignment="Center" Margin="0,30,0,0" HorizontalAlignment="Center" FontWeight="ExtraLight" Foreground="White" FontSize="19" Text="MEDIDA: KG" TextWrapping="Wrap"/>
+                                    <TextBlock VerticalAlignment="Center" Margin="0,60,0,0" HorizontalAlignment="Center" FontWeight="Light" Foreground="White" FontSize="13" Text="Precio unitario: $40.00" TextWrapping="Wrap"/>
+                                </Grid>
+                            </StackPanel>
+                            <TextBlock Grid.Row="0" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" FontSize="30" Margin="0,15,15,0" Foreground="White" Text=""/>
+                        </Grid>
+                    </Grid>
+
+
+                    <!--Formulario-->
+
+                    <Grid Grid.Row="1" Margin="10">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
+                            <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
+
+                                <StackPanel Orientation="Vertical">
+                                    <TextBox x:Name="txtNombre" Background="Transparent" PlaceholderText="Descripción"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+
+                                    <TextBox x:Name="txtSueldo" Background="Transparent" PlaceholderText="Sueldo"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+
+                                    <ComboBox x:Name="comboTipo" HorizontalAlignment="Stretch">
+                                        <ComboBoxItem Tag="1">Por hora</ComboBoxItem>
+                                        <ComboBoxItem Tag="2" >Por día</ComboBoxItem>
+                                    </ComboBox>
+                                </StackPanel>
+
+                            </Border>
+                            <Grid HorizontalAlignment="Stretch" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Button Name="guardar" HorizontalAlignment="Stretch" Grid.Column="0"  Margin="0,10,10,10" Style="{StaticResource buttonImportant}">Guardar</Button>
+                                <Button Name="cancelar" HorizontalAlignment="Stretch"  Grid.Column="1" Margin="0,10,0,10">Cancelar</Button>
+                            </Grid>
+                            <Button Name="eliminar" HorizontalAlignment="Stretch"   Background="#ff0f35" Foreground="White">Eliminar</Button>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </FlipViewItem>
+        </FlipView>
+
+        <!--Tabs-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Margin="0,0,0,0"   HorizontalAlignment="Stretch"  Height="1" BorderThickness="2" BorderBrush="#FFEAEAEA"/>
+            <StackPanel Grid.Row="1" Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Grid Margin="10,0,10,0" PointerPressed="indicator_PointerPressed" Tag="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="20"  FontFamily="Segoe MDL2 Assets" Text="" Foreground="Gray"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontWeight="ExtraLight" Text="Registro" FontSize="10"  Foreground="Gray"/>
+                    <Rectangle Grid.Row="2" Tag="0" Name="formIndicator"  HorizontalAlignment="Stretch" Visibility="Visible" Height="5"  Fill="{ThemeResource InkToolbarAccentColorThemeBrush}"></Rectangle>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</Page>
+    
+
+        
+   

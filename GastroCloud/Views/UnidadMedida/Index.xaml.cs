@@ -39,6 +39,12 @@ namespace GastroCloud.Views.UnidadMedida
 
         }
 
+        private void StackPanel_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Views.UnidadMedida.Form));
+        }
+
+
         private void btnCrear_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Views.UnidadMedida.Form));

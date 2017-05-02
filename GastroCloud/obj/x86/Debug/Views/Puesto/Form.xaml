@@ -7,64 +7,139 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-
     <!--Recursos-->
     <Page.Resources>
-
         <ResourceDictionary >
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ms-appx:///Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-
+            <CollectionViewSource x:ConnectionId='1'
+            x:Name="itemsViewSource"
+            Source="{Binding index}"/>
 
         </ResourceDictionary>
     </Page.Resources>
     <!--Terminan Recursos-->
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='2' x:Name="VisualStateGroup"/>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="guardar.HorizontalAlignment" Value="Right"/>
+                        <Setter Target="cancelar.HorizontalAlignment" Value="Left"/>
+                        <Setter Target="eliminar.Width" Value="612"/>
+                        <Setter Target="guardar.Width" Value="300"/>
+                        <Setter Target="cancelar.Width" Value="300"/>
+                        <Setter Target="eliminar.Margin" Value="-8,0,0,0"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
 
-        <StackPanel Grid.Row="0" Background="{ThemeResource InkToolbarAccentColorThemeBrush}"  Orientation="Horizontal">
-            <Button Style="{StaticResource NavigationBackButtonSmallStyle}" Foreground="{ThemeResource FocusVisualWhiteStrokeThemeBrush}"></Button>
-            <TextBlock x:ConnectionId='7' FontSize="20" Foreground="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" Name="title" Margin="10,0,0,0">Registro de puesto</TextBlock>
-        </StackPanel>
+        <!--Contenido-->
+        <FlipView x:ConnectionId='3' Name="mainContent" Grid.Row="0" Background="{ThemeResource FocusVisualWhiteStrokeThemeBrush}">
+            <FlipViewItem Background="White">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-        <!--Menu de opciones-->
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <RadioButton Grid.Row="0"  Content="Guardar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
-            <RadioButton x:ConnectionId='5' Grid.Row="0"  x:Name="btnC" Content="Cancelar"                           Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
-            <RadioButton x:ConnectionId='6' Grid.Row="0"  x:Name="btnCar" Content="Eliminar" Tag="" Style="{StaticResource IconWithButton}" Margin="0,27,0,26" />
-        </StackPanel>
+                    <!--Foto-->
 
-        <ScrollViewer Grid.Row="2">
-            <!--Formulario-->
-            <StackPanel Grid.Row="1" Orientation="Vertical">
-                <!--Cuadro para imagen-->
+                    <Grid Grid.Row="0" Background="{ThemeResource InkToolbarAccentColorThemeBrush}">
+                        <Grid Height="250" Background="{ThemeResource AppBarToggleButtonOverflowLabelForegroundCheckedDisabled}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
 
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
-                    <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
-                        <TextBox x:ConnectionId='4' x:Name="txtNombre" Background="Transparent" PlaceholderText="Descripción"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
-                    </Border>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
-                    <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
-                        <TextBox x:ConnectionId='3' x:Name="txtSueldo" Background="Transparent" PlaceholderText="Sueldo"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
-                    </Border>
-                </StackPanel>
-                <StackPanel x:ConnectionId='1' Name="tipo" Orientation="Vertical">
-                    <ComboBox x:ConnectionId='2' x:Name="comboTipo" HorizontalAlignment="Stretch">
-                        <ComboBoxItem Tag="1">Por hora</ComboBoxItem>
-                        <ComboBoxItem Tag="2" >Por día</ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
+                            <StackPanel VerticalAlignment="Center" Grid.Row="0" >
+                                <Grid VerticalAlignment="Center">
+                                    <Image x:ConnectionId='12' x:Name="imgAlmacen" Height="300" Stretch="UniformToFill" Source="https://source.unsplash.com/collection/783769" />
+                                    <Ellipse Height="180" Width="180" Margin="0,-40,0,0" VerticalAlignment="Center" Fill="Black" Opacity="0.4"/>
+                                    <TextBlock Margin="0,-100,0,0" FontFamily="Segoe MDL2 Assets" Text="" FontSize="70"  Foreground="White" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock  Margin="0,-5,0,0" VerticalAlignment="Center"  HorizontalAlignment="Center" FontWeight="ExtraBlack" Foreground="White" FontSize="19" Text="NARANJA DULCE" />
+                                    <TextBlock VerticalAlignment="Center" Margin="0,30,0,0" HorizontalAlignment="Center" FontWeight="ExtraLight" Foreground="White" FontSize="19" Text="MEDIDA: KG" TextWrapping="Wrap"/>
+                                    <TextBlock VerticalAlignment="Center" Margin="0,60,0,0" HorizontalAlignment="Center" FontWeight="Light" Foreground="White" FontSize="13" Text="Precio unitario: $40.00" TextWrapping="Wrap"/>
+                                </Grid>
+                            </StackPanel>
+                            <TextBlock Grid.Row="0" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" FontSize="30" Margin="0,15,15,0" Foreground="White" Text=""/>
+                        </Grid>
+                    </Grid>
+
+
+                    <!--Formulario-->
+
+                    <Grid Grid.Row="1" Margin="10">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
+         
+                                <StackPanel Orientation="Vertical">
+                                <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,10">
+                                    <TextBox x:ConnectionId='11' x:Name="txtNombre" Background="Transparent" PlaceholderText="Descripción"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+                                </Border>
+                                <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,10">
+                                    <TextBox x:ConnectionId='10' x:Name="txtSueldo" Background="Transparent" PlaceholderText="Sueldo"  BorderThickness="0"  Foreground="#FF9B9B9B" FontFamily="Century Gothic" Height="Auto"/>
+                                </Border>
+                                <ComboBox x:ConnectionId='9' x:Name="comboTipo" HorizontalAlignment="Stretch">
+                                        <ComboBoxItem Tag="1">Por hora</ComboBoxItem>
+                                        <ComboBoxItem Tag="2" >Por día</ComboBoxItem>
+                                    </ComboBox>
+                                </StackPanel>
+
+                            <Grid HorizontalAlignment="Stretch" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Button x:ConnectionId='7' Name="guardar" HorizontalAlignment="Stretch" Grid.Column="0"  Margin="0,10,10,10" Style="{StaticResource buttonImportant}">Guardar</Button>
+                                <Button x:ConnectionId='8' Name="cancelar" HorizontalAlignment="Stretch"  Grid.Column="1" Margin="0,10,0,10">Cancelar</Button>
+                            </Grid>
+                            <Button x:ConnectionId='6' Name="eliminar" HorizontalAlignment="Stretch"   Background="#ff0f35" Foreground="White">Eliminar</Button>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </FlipViewItem>
+        </FlipView>
+
+        <!--Tabs-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+             <StackPanel Grid.Row="1" Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Grid x:ConnectionId='4' Margin="10,0,10,0"                                           Tag="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="20"  FontFamily="Segoe MDL2 Assets" Text="" Foreground="Gray"/>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontWeight="ExtraLight" Text="Registro" FontSize="10"  Foreground="Gray"/>
+                    <Rectangle x:ConnectionId='5' Grid.Row="2" Tag="0" Name="formIndicator"  HorizontalAlignment="Stretch" Visibility="Visible" Height="5"  Fill="{ThemeResource InkToolbarAccentColorThemeBrush}"></Rectangle>
+                </Grid>
             </StackPanel>
-        </ScrollViewer>
+        </Grid>
     </Grid>
 
 </Page>
+    
+
+        
+   
 

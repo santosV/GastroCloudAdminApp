@@ -69,7 +69,16 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" FontSize="30" Margin="0,15,15,0" Foreground="White" Text=""/>
-                            <TextBlock FontSize="80" Foreground="White" FontWeight="SemiBold" FontFamily="Segoe MDL2 Assets" Margin="0,-30,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="" Grid.Row="1"/>
+                            <StackPanel VerticalAlignment="Center" Grid.Row="0" >
+                                <Grid VerticalAlignment="Center">
+                                    <Image x:Name="imgAlmacen" Height="300" Stretch="UniformToFill" Source="https://source.unsplash.com/collection/781608" />
+                                    <Ellipse Height="180" Width="180" Margin="0,-40,0,0" VerticalAlignment="Center" Fill="Black" Opacity="0.4"/>
+                                    <TextBlock Margin="0,-100,0,0" FontFamily="Segoe MDL2 Assets" Text="" FontSize="70"  Foreground="White" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock  Margin="0,-5,0,0" VerticalAlignment="Center"  HorizontalAlignment="Center" FontWeight="ExtraBlack" Foreground="White" FontSize="19" Text="NARANJA DULCE" />
+                                    <TextBlock VerticalAlignment="Center" Margin="0,30,0,0" HorizontalAlignment="Center" FontWeight="ExtraLight" Foreground="White" FontSize="19" Text="MEDIDA: KG" TextWrapping="Wrap"/>
+                                    <TextBlock VerticalAlignment="Center" Margin="0,60,0,0" HorizontalAlignment="Center" FontWeight="Light" Foreground="White" FontSize="13" Text="Precio unitario: $40.00" TextWrapping="Wrap"/>
+                                </Grid>
+                            </StackPanel>
                         </Grid>
                     </Grid>
 

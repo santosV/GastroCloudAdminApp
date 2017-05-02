@@ -12,13 +12,18 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <StackPanel Margin="10,10,10,10" Grid.Row="0" Orientation="Horizontal" PointerPressed="StackPanel_PointerPressed">
+            <TextBlock FontFamily="Segoe MDL2 Assets" Foreground="{ThemeResource InkToolbarAccentColorThemeBrush}" Margin="-10,3.5,0,0" Text="" />
+            <TextBlock Margin="5,0,0,0" Foreground="{ThemeResource InkToolbarAccentColorThemeBrush}" Text="Crear"/>
+        </StackPanel>
 
 
         <!--Buscador-->
-        <StackPanel Grid.Row="0"  Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,20,0,10">
+        <StackPanel Grid.Row="1"  Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,10">
             <Border HorizontalAlignment="Stretch"  CornerRadius="8" BorderThickness="2" BorderBrush="#FFEAEAEA" Margin="0,0,0,0">
                 <Grid>
                     <Grid.ColumnDefinitions>

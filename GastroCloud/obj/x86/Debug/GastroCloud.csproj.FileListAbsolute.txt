@@ -622,7 +622,6 @@ C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\De
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Almacen\SearchRecipeView.xbf
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Views\Almacen\SearchRecipeView.xbf
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Views\Almacen\ItemDetailRecipeView.xbf
-C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\GastroCloud.csprojResolveAssemblyReference.cache
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Almacen\ItemDetailRecipeView.g.i.cs
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Almacen\ItemDetailRecipeView.g.cs
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Almacen\ItemDetailRecipeView.xaml
@@ -662,3 +661,4 @@ C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\De
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\Views\Grupo\Personalizado\ItemDetailRecipeView.xbf
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Views\Grupo\Personalizado\ItemDetailRecipeView.xbf
 C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Views\Grupo\Personalizado\SearchRecipeView.xbf
+C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\obj\x86\Debug\GastroCloud.csprojResolveAssemblyReference.cache

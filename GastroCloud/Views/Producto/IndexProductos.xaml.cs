@@ -31,6 +31,12 @@ namespace GastroCloud.Views.Producto
             gridProductos.ItemsSource = producto.getDescuento();
         }
 
+        private void StackPanel_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Views.Producto.Form));
+        }
+
+
         private void btnIndexSelection(object sender, PointerRoutedEventArgs e)
         {
             Grid gridClicked = sender as Grid;

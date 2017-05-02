@@ -37,6 +37,13 @@ namespace GastroCloud.Views.Promocion
             this.Frame.Navigate(typeof(Views.Promocion.DetailsPromocion));
 
         }
+
+        private void StackPanel_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Views.Promocion.Form));
+        }
+
+
         private void btnCrear_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Views.Promocion.Form));

@@ -32,12 +32,7 @@ namespace GastroCloud.Views.Almacen
 
         private void selection_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Views.Almacen.ItemDetailRecipeView));
-        }
-
-        private void cancel(object sender, PointerRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Views.Almacen.FormAlmacen), 1);
+            this.Frame.Navigate(typeof(Views.Almacen.FormAlmacen),1);
         }
     }
 }

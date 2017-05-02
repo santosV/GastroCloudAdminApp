@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-29T21:22:57.011</Modified>
+      <Modified>2017-05-02T20:13:12.210</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\GastroCloud.exe">
       <PackagePath>entrypoint\GastroCloud.exe</PackagePath>
-      <Modified>2017-04-29T21:19:05.916</Modified>
+      <Modified>2017-05-02T20:13:03.531</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\.nuget\packages\Callisto\1.4.0\lib\netcore451\Callisto.dll">
       <PackagePath>Callisto.dll</PackagePath>
@@ -560,7 +560,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\GastroCloud.xr.xml">
       <PackagePath>GastroCloud.xr.xml</PackagePath>
-      <Modified>2017-04-29T21:09:09.272</Modified>
+      <Modified>2017-05-02T20:13:01.002</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -573,11 +573,11 @@
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-29T21:22:55.880</Modified>
+      <Modified>2017-05-02T20:13:08.612</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Santos Vega\Documents\GitHub\GastroCloudAdminApp\GastroCloud\bin\x86\Debug\Core\GastroCloud.exe">
       <PackagePath>GastroCloud.exe</PackagePath>
-      <Modified>2017-04-29T21:22:56.981</Modified>
+      <Modified>2017-05-02T20:13:12.173</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
